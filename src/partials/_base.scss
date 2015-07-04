@@ -1,0 +1,48 @@
+@import "link";
+
+/* ============================ support  ============================ */
+$browser-minimum-versions: ("chrome": 30, "firefox": 25, "ie": 9, "safari": 7, "opera": 17);
+
+/* ============================ layout  ============================ */
+$grid-columns-default: 12 !default;
+$grid-columns-sm-portrait: 8 !default;
+$grid-columns-sm-landscape: 12 !default;
+$grid-small-grid-suffix: 'sm' !default;
+$screen-sm-max-portrait: 320px !default;
+$screen-sm-min-landscape: 321px !default;
+$screen-sm-max-landscape: 767px !default;
+
+$grid-columns-md: 12 !default;
+$grid-medium-grid-suffix: 'md' !default;
+$screen-md-min: 768px !default;
+$screen-md-max: 1024px !default;
+
+$grid-columns-lg: 12 !default;
+$grid-large-grid-suffix: 'lg' !default;
+$screen-lg-min: 1025px !default;
+$screen-lg-max: 1920px !default;
+
+$grid-columns-xl: 18 !default;
+$grid-retina-grid-suffix: 'xl' !default;
+$screen-xl-min: 1921px !default;
+
+$grid-columns-default: $grid-columns-lg !default;
+
+/* ============================ font  ============================ */
+
+$font-size-default: 16px !default;
+
+$font-size-sm: 0.75 * $font-size-default !default;
+$font-size-md: 0.9 * $font-size-default !default;
+$font-size-lg : $font-size-default;
+$font-size-xl: 1.25 * $font-size-default !default;
+
+@font-face {
+    font-family: 'StarterKit';
+    src: url($font-file-url + 'starterkit.eot') format('eot');
+    src : url($font-file-url + 'starterkit.woff') format('woff'),
+          url($font-file-url + 'starterkit.svg#abcd') format('svg'),
+          url($font-file-url + 'starterkit.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

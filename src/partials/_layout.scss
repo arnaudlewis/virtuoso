@@ -1,0 +1,97 @@
+@import "base";
+
+.container {
+	width: 100%;
+	padding: 1rem;
+
+	&.full-width {
+		padding: 1rem 0;
+	}
+
+	.row {
+		padding: 1rem;
+	}
+}
+
+@mixin set-attribute-col-x($current-column, $grid-columns) {
+	width: $current-column * 100 / $grid-columns * 1%;
+	@if $current-column < $grid-columns {
+		float: left;
+	}
+}
+
+@mixin col-x-size($grid-columns, $resolution-suffix) {
+	@for $i from 1 through $grid-columns {
+		.col-#{$i}-#{$resolution-suffix}  {
+			@include set-attribute-col-x($i, $grid-columns);
+		}
+	}
+}
+
+@mixin col-x-default($grid-columns) {
+	@for $i from 1 through $grid-columns {
+		[class *= "col-#{$i}-"]  {
+			@include set-attribute-col-x($i, $grid-columns);
+		}
+	}
+}
+
+@mixin set-attribute-offset-x($current-offset, $grid-columns) {
+	margin-left: $current-offset * 100 / $grid-columns * 1%;
+}
+
+@mixin offset-x-size($grid-columns, $resolution-suffix) {
+	@for $i from 1 through $grid-columns {
+		.offset-#{$i}-#{$resolution-suffix}  {
+			@include set-attribute-offset-x($i, $grid-columns);
+		}
+	}
+}
+
+@mixin offset-x-default($grid-columns) {
+	@for $i from 1 through $grid-columns {
+		[class *= "offset-#{$i}-"]  {
+			@include set-attribute-offset-x($i, $grid-columns);
+		}
+	}
+}
+
+/* default*/
+@include col-x-default($grid-columns-default);
+@include offset-x-default($grid-columns-default);
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
+	@include col-x-size($grid-columns-sm-landscape, $grid-small-grid-suffix);
+	@include offset-x-size($grid-columns-sm-landscape, $grid-small-grid-suffix);
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : $screen-sm-max-portrait) {
+	@include col-x-size($grid-columns-sm-portrait, $grid-small-grid-suffix);
+	@include offset-x-size($grid-columns-sm-portrait, $grid-small-grid-suffix);
+}
+
+/* Tablets (landscape) ----------- */
+@media only screen and (min-device-width : $screen-md-min) and (max-device-width : $screen-md-max) and (orientation : landscape) {
+	@include col-x-size($grid-columns-md, $grid-medium-grid-suffix);
+	@include offset-x-size($grid-columns-md, $grid-medium-grid-suffix);
+}
+
+/* Tablets (portrait) ----------- */
+@media only screen and (min-device-width : $screen-md-min) and (max-device-width : $screen-md-max) and (orientation : portrait) {
+	@include col-x-size($grid-columns-md, $grid-medium-grid-suffix);
+	@include offset-x-size($grid-columns-md, $grid-medium-grid-suffix);
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : $screen-lg-min) and (max-width: $screen-lg-max) {
+	@include col-x-size($grid-columns-lg, $grid-large-grid-suffix);
+	@include offset-x-size($grid-columns-lg, $grid-large-grid-suffix);
+}
+
+/* Retina screens ----------- */
+@media only screen  and (min-width : $screen-xl-min) {
+	@include col-x-size($grid-columns-xl, $grid-retina-grid-suffix);
+	@include offset-x-size($grid-columns-xl, $grid-retina-grid-suffix);
+}

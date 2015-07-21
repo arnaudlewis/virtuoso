@@ -1,0 +1,7 @@
+@mixin thumbnail {
+	width: 4rem;
+	height: 4rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 0.5rem;
+}

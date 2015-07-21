@@ -2,23 +2,24 @@
 @import "../mixin_helpers";
 @import "../color";
 
-.slider {
+.video-banner {
 	width: 100%;
+	color: white;
 	position: relative;
 
-	&.slider-dark {
-		color: $white;
+	&.video-banner-dark .video{
+		background-color: $black;
 	}
 
-	&.slider-light {
-		color: $dark-grey;
+	&.video-banner-light .video {
+		background-color: $white;
 	}
 
 	&.full {
 		height: 100vh;
-		.slide {
+		.video, video {
 			height: 100vh;
-			.slide-container  {
+			.video-container  {
 				p {
 					@include lineClamp(8);
 				}
@@ -31,9 +32,9 @@
 
 	&.medium {
 		height: 50vh;
-		.slide {
+		.video, video {
 			height: 50vh;
-			.slide-container  {
+			.video-container  {
 				p {
 					@include lineClamp(5);
 				}
@@ -46,9 +47,9 @@
 
 	&.small {
 		height: 25vh;
-		.slide {
+		.video, video {
 			height: 25vh;
-			.slide-container  {
+			.video-container  {
 				p {
 					@include lineClamp(3);
 					  font-size: 1.2rem;
@@ -61,33 +62,27 @@
 		}
 	}
 
-	.slide {
-		@include transition(opacity 0.4s);
+	.video {
+		-webkit-transition: opacity 0.4s;
 		transition: opacity 0.4s;
 		background-size: cover;
+		@include displayFlex;
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background-color: $dark-blue;
 		background-size: cover;
-		opacity: 0;
 		box-sizing: border-box;
 
-		&.active {
-			opacity: 1;
-		}
-
-		img {
-			position: absolute;
+		video {
 			min-width: 100%; 
-			min-height: 100%; 
 			width: auto; 
-			height: auto;
 			overflow: hidden;
+			align-self:  center;
+			width: 100%;
 		}
 
-		.slide-container {
-			@include displayFlex;
+		.video-container {
+			display: flex;
 			@include flexDirection(column);
 			position: absolute;
 			left: 50%;
@@ -112,11 +107,11 @@
 
  /* Smartphones (landscape) ----------- */
  @media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
- 	.slider {
+ 	.video-banner {
 		height: 100vh!important;
-		.slide {
+		.video, video {
 			height: 100vh!important;
-			.slide-container  {
+			.video-container  {
 				p {
 					@include lineClamp(5);
 				}
@@ -130,12 +125,12 @@
 
  /* Smartphones (portrait) ----------- */
  @media only screen and (max-width : $screen-sm-max-portrait) {
- 	.slider {
+ 	.video-banner {
  		&.small {
  			height: 50vh;
- 			.slide {
+ 			.video, video {
  				height: 50vh;
- 				.slide-container  {
+ 				.video-container  {
  					p {
  						@include lineClamp(5);
  					}

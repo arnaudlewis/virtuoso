@@ -1,4 +1,5 @@
 @import "../color";
+@import "../mixin_helpers";
 
 .navbar {
 	display: block;
@@ -6,23 +7,32 @@
 	z-index: 10000;
 
 	&.navbar-dark {
-		color: $nav-font-light;
+		*{color: $nav-font-light;}
 		background-color: $nav-dark;
+		[type="search"] {
+			background-color: $nav-dark;
+		}
 	}
 
 	&.navbar-light {
-		color: $nav-font-dark;
+		* {color: $nav-font-dark;}
 		background-color: $nav-light;
+		[type="search"] {
+			background-color: $nav-light;
+		}
 	}
 
 	&.navbar-collapse {
 		width: 20rem;
 		box-sizing: border-box;
 		padding: 1.6rem 1.8rem;
-		background-color: $nav-dark;
-		color: $nav-font-light;
-		transition: transform .2s ease-in-out;
+		@include transition(transform .2s ease-in-out);
 		height: 100%;
+
+		.navbar-container {
+			@include displayFlex;
+			@include flexDirection(column);
+		}
 
 		&.active {
 			animation-timing-function: ease-in;
@@ -30,16 +40,15 @@
 
 		li {
 			list-style: none;
+			cursor: pointer;
 		}
 
 		[type="search"] {
 			-webkit-appearance: textfield;
 			box-sizing: border-box;
-			border: solid 1px #4e4e4e;
+			border: solid 1px $grey;
 			padding: 0.5rem 1rem;
-			background: #181818;
 			border-radius: 1rem;
-			color: #FFF;
 			font-size: 1rem;
 			&:focus {
 				outline: none;
@@ -54,10 +63,13 @@
 			padding-top: 30px;
 		}
 
-		.navbar-section h3 {
-			text-transform: uppercase;
-			font-size: 16px;
-			margin: 0;
+		.navbar-section {
+			@include headings {
+				text-transform: uppercase;
+				font-size: 16px;
+				margin: 0;
+				cursor: pointer;
+			}
 		}
 
 		.navbar-section ul {

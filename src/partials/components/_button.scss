@@ -1,0 +1,40 @@
+@import "../color";
+
+	.button {
+		background: $orange;
+		display: inline-block;
+		color: $white;
+		font-family: 'Montserrat',Sans;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 1rem 2rem;
+		margin: 1.5rem 0;
+		border-left: 8px solid rgba(0,0,0,0.15);
+		/* margin-right: 10px; */
+		cursor: pointer;
+		@include transition(.1s);
+		font-size: 1rem;
+	}
+
+	.read-more-button {
+		cursor: pointer;
+		font-family: 'Lato', sans-serif;
+		color: $orange;
+		text-transform: uppercase;
+		text-decoration: none;
+		border: 1px solid $orange;
+		padding: 0.7rem 1rem;
+		font-size: 0.8rem;
+		border-radius: 0.3rem;
+		letter-spacing: 1px;
+		display: inline-block;
+		text-align: center;
+		background: none;
+		margin: 1.5rem 0;
+
+		&:hover {
+			border: 1px solid $orange;
+			background: $orange;
+			color: $white;
+		}
+	}

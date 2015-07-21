@@ -1,23 +1,24 @@
 @import "base";
+@import "mixin_helpers";
 
-.container {
-	width: 100%;
-	padding: 1rem;
+.container-fluid {
+	@include displayFlex;
+	@include flexWrap(wrap);
+}
 
-	&.full-width {
-		padding: 1rem 0;
-	}
-
-	.row {
-		padding: 1rem;
-	}
+.centered {
+	align-items: center;
+	justify-content: center;
 }
 
 @mixin set-attribute-col-x($current-column, $grid-columns) {
-	width: $current-column * 100 / $grid-columns * 1%;
-	@if $current-column < $grid-columns {
-		float: left;
-	}
+		@include displayFlex;
+		@include flexWrap(wrap);
+		box-sizing: border-box;
+		@include flex(0 0 auto);
+
+		flex-basis: $current-column * 100 / $grid-columns * 1%;
+		max-width: $current-column * 100 / $grid-columns * 1%;
 }
 
 @mixin col-x-size($grid-columns, $resolution-suffix) {
@@ -30,7 +31,7 @@
 
 @mixin col-x-default($grid-columns) {
 	@for $i from 1 through $grid-columns {
-		[class *= "col-#{$i}-"]  {
+		.col-#{$i} {
 			@include set-attribute-col-x($i, $grid-columns);
 		}
 	}
@@ -50,7 +51,7 @@
 
 @mixin offset-x-default($grid-columns) {
 	@for $i from 1 through $grid-columns {
-		[class *= "offset-#{$i}-"]  {
+		.offset-#{$i}  {
 			@include set-attribute-offset-x($i, $grid-columns);
 		}
 	}
@@ -62,14 +63,14 @@
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
-	@include col-x-size($grid-columns-sm-landscape, $grid-small-grid-suffix);
-	@include offset-x-size($grid-columns-sm-landscape, $grid-small-grid-suffix);
+	@include col-x-size($grid-columns-sm-landscape, $grid-small-grid-landscape-suffix);
+	@include offset-x-size($grid-columns-sm-landscape, $grid-small-grid-landscape-suffix);
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : $screen-sm-max-portrait) {
-	@include col-x-size($grid-columns-sm-portrait, $grid-small-grid-suffix);
-	@include offset-x-size($grid-columns-sm-portrait, $grid-small-grid-suffix);
+	@include col-x-size($grid-columns-sm-portrait, $grid-small-grid-portrait-suffix);
+	@include offset-x-size($grid-columns-sm-portrait, $grid-small-grid-portrait-suffix);
 }
 
 /* Tablets (landscape) ----------- */

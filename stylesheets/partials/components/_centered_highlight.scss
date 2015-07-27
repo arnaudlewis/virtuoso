@@ -1,0 +1,74 @@
+  @import "../color";
+  @import "../base";
+  @import "../mixin_helpers";
+  @import "./slice_helpers";
+
+  .centered-highlight {
+    @include flexContainer;
+    @include centerContent;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    flex-direction: column;
+    padding: 5rem;
+
+    .underlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%; 
+      margin: 5rem 0 0 10%;
+      padding-bottom: 10rem;
+      bottom: 20%;
+      background-color: #F2F6FA;
+      z-index: 0;
+    }
+
+    *:not(.underlay), {
+      z-index: 1;
+      position: relative;
+    }
+
+    .thumbnail {
+      @include thumbnail;
+    }
+
+      .text-wrapper {
+        max-width: 50%;
+        p {
+         margin: 2rem;
+         line-height: 1.3rem;
+       }
+     }
+
+     img {
+      object-fit: contain;
+      max-width: 60%;
+      height: auto;
+    }
+  } 
+
+
+
+  /* Smartphones (portrait) ----------- */
+  @media only screen and (max-width : $screen-sm-max-portrait) {
+    .centered-highlight {
+
+        padding: 2.5rem;
+
+        .underlay {
+          width: 100%;
+          bottom: 20%;
+          margin: 1.5rem 0 0 0;
+        }
+
+        .text-wrapper {
+          max-width: 90%;
+        }
+
+        img {
+          max-width: 100%;
+        }
+    }
+}

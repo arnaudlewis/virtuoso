@@ -12,12 +12,12 @@
 		border-left: 8px solid rgba(0,0,0,0.15);
 		/* margin-right: 10px; */
 		cursor: pointer;
-		@include transition(.1s);
+		transition: .1s;
 		font-size: 1rem;
 	}
 
 	.read-more-button {
-		cursor: pointer;
+		cursor: pointer; 
 		font-family: 'Lato', sans-serif;
 		color: $orange;
 		text-transform: uppercase;

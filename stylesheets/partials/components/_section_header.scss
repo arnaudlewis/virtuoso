@@ -1,5 +1,8 @@
+@import "../base";
+
 .section-header {
 	width: 100%;
+	box-sizing: border-box;
 	@include flexContainer;
 	color: white;
 	padding: 5rem;
@@ -15,8 +18,7 @@
 	&.section-header-centered {
 		background-color: #4187d2;
 		text-align: center;
-		align-items: center;
-		justify-content: center;
+		@include centerContent;
 
 		.text-wrapper {
 			font-weight: bold;

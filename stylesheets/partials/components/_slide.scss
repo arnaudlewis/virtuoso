@@ -5,27 +5,23 @@
 .slider {
 	width: 100%;
 	position: relative;
+	height: 100vh;
 
 	&.slider-dark {
-		color: $white;
+		* { color: $white;}
+
+		.slide::before {
+			background-color: $black;
+			opacity: 0.4;
+		}
 	}
 
 	&.slider-light {
-		color: $dark-grey;
-	}
+		* { color: $dark-grey;}
 
-	&.full {
-		height: 100vh;
-		.slide {
-			height: 100vh;
-			.slide-container  {
-				p {
-					@include lineClamp(8);
-				}
-				.title {
-					@include lineClamp(3);
-				}
-			}
+		.slide::before {
+			background-color: $white;
+			opacity: 0.3;
 		}
 	}
 
@@ -62,7 +58,6 @@
 	}
 
 	.slide {
-		@include transition(opacity 0.4s);
 		transition: opacity 0.4s;
 		background-size: cover;
 		position: absolute;
@@ -72,6 +67,43 @@
 		background-size: cover;
 		opacity: 0;
 		box-sizing: border-box;
+		height: 100vh;
+
+		[class *="arrow-"] {
+			position: absolute;
+			text-align: center;
+			font-weight: bold;
+			display: block;
+			z-index: 10;
+			color: #FFF;
+			width: 2rem;
+			cursor: pointer;
+			height: 2rem;
+			background-size: 100%;
+			top: 50%;
+			-webkit-transform: translatey(-50%);
+			-ms-transform: translatey(-50%);
+			transform: translatey(-50%);
+		}
+
+		.arrow-prev {
+			left: 1.5rem;
+		}
+
+		.arrow-next {
+			right: 1.5rem;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute; /* could also be absolute */ 
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+		}
 
 		&.active {
 			opacity: 1;
@@ -87,24 +119,24 @@
 		}
 
 		.slide-container {
-			@include displayFlex;
-			@include flexDirection(column);
+			display: flex;
+			flex-direction: column;
 			position: absolute;
 			left: 50%;
 			top: 50%;
 			width: 80%;
 			z-index: 2;
-			-webkit-transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 
 			.title {
 				font-size: 2rem;
+				@include lineClamp(3);
 			}
+
 			p {
-				margin-top: 2rem;
 				font-size: 1.3rem;
 				line-height: 1.9rem;
+				@include lineClamp(8);
 			}
 		}
 	}
@@ -131,16 +163,23 @@
  /* Smartphones (portrait) ----------- */
  @media only screen and (max-width : $screen-sm-max-portrait) {
  	.slider {
+ 		.slide [class *="arrow-"] {
+ 			bottom: 5%;
+ 			top: initial;
+ 		} 
+ 		
  		&.small {
  			height: 50vh;
- 			.slide {
+ 			.slide { 
  				height: 50vh;
  				.slide-container  {
  					p {
- 						@include lineClamp(5);
+ 						@include lineClamp(3);
+ 						font-size: 1.2rem;
  					}
  					.title {
- 						@include lineClamp(3);
+ 						@include lineClamp(1);
+ 						font-size: 2rem;
  					}
  				}
  			}

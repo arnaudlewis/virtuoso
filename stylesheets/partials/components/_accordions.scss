@@ -1,0 +1,88 @@
+@import "../color";
+@import "../mixin_helpers";
+@import "../base";
+
+.accordions {
+	width: 100%;
+	margin: 0;
+	text-align: left;
+	padding: 5rem;
+	box-sizing: border-box;
+
+	* {color: $dark-grey-blue;}
+
+	.item {
+		margin: 1rem 0;
+
+		label {
+			padding: 1rem;
+			z-index: 20;
+			display: block;
+			cursor: pointer;
+			font-weight: 500;
+			font-size: 1rem;
+			background: $light-grey;
+			display: flex;
+			width: 100%; 
+			position: relative;
+			align-items: center;
+
+			&:focus {
+				outline: none;
+			}
+
+			span {
+				flex: 1 0 90%; 
+				position: relative; 
+				max-width: 90%; 
+			}
+
+			.accordion-arrow {
+				position: absolute;
+				right: 1.5rem;
+				top: 50%;
+				transform: translate(0, -50%);
+				&:after {
+					height: 1.2rem;
+					width: 1.2rem;
+					font-family: 'StarterKit';
+					content: '\e013';
+					border-radius: 50%;
+					color: $sky-blue;
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		input{
+			display: none;
+
+			&:checked {
+				& ~ .summary{
+					transition: height 0.3s ease-in-out;
+				}
+			}
+		}
+
+		.summary{
+			overflow: hidden;
+			height: 0px;
+			transition: height 0.3s ease-in-out;
+
+			& p{
+				font-size: 0.9rem;
+				padding: 1rem; 
+				line-height: 1.1rem;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
+	.accordions { padding: 2.5rem 0; }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : $screen-sm-max-portrait) {
+	.accordions { padding: 2.5rem 0; }
+}

@@ -1,31 +1,37 @@
 @import "../color";
+@import "../base";
+@import "../mixin_helpers";
 
 .alternated-highlights {
 	width: 100%;
+	box-sizing: border-box;
 	@include flexContainer;
 
 	.item {
 		width: 100%;
-		@include displayFlex;
-
+		display: inline-block;
+		display: flex;
+  
 		&.alternate {
 			background-color: $light-grey;
 		} 
 
 		.text-wrapper, .image-container {
 			width: 50%;
-		}
+		} 
 
 		.text-wrapper {
-			@include displayFlex;
-			@include flexDirection(column);
+			display: inline-block;
+			min-width: 50%; 
+			max-width: 50%;
+			flex-direction: column;
+			align-self: center;
 			padding: 5rem;
 			line-height: 1.5rem;
-			align-self: center;
 
 			.head-text {
-				@include displayFlex;
-				@include flexDirection(column);
+				display: flex;
+				flex-direction: column;
 
 				.thumbnail {
 					align-self: flex-start;
@@ -39,8 +45,12 @@
 		}
 
 		.image-container {
-			padding: 5rem;
+			display: inline-block;
+			min-width: 50%;
+			max-width: 50%;
+
 			align-self: center;
+			padding: 5rem;
 
 			img {
 				object-fit: contain;
@@ -66,10 +76,10 @@
  @media only screen and (max-width : $screen-sm-max-portrait) {
  	.alternated-highlights {
  		.item {
- 			@include flexDirection(column);
+ 			flex-direction: column;
 
  			&.alternate {
- 				@include flexDirection(column-reverse);
+ 				flex-direction: column-reverse;
  			} 
 
  			.text-wrapper, .image-container {
@@ -79,25 +89,25 @@
 
  			.text-wrapper {
  				width: 100%;
- 				padding: 0 2.5rem 2.5rem 2.5rem;
+ 				padding: 2rem;
+
+ 				@include headings {
+ 					margin: 1em 0 0 0; 
+ 					flex: 1;
+ 				}
 
  				.head-text {
- 					@include displayFlex;
- 					@include flexDirection(row);
-
+ 					display: flex;
+ 					flex-direction: row;
  					.thumbnail {
- 						align-self: center;
+ 						align-self: flex-end;
  						margin-right: 1.5rem;
- 					}
-
- 					@include headings {
- 						@include flex(1);
  					}
  				}
  			}
 
  			.image-container {
- 				padding: 2.5rem 2.5rem 0 2.5rem;
+ 				padding: 1.5rem 0;
  			}
  		}
  	}

@@ -1,0 +1,33 @@
+{
+  "name": "virtuoso",
+  "version": "1.0.0",
+  "description": "CSS Framework to build webpage in a minute",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnaudlewis/virtuoso.git"
+  },
+  "keywords": [
+    "CSS",
+    "Responsive",
+    "Sass",
+    "SCSS"
+  ],
+  "author": "alws",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arnaudlewis/virtuoso/issues"
+  },
+  "homepage": "https://github.com/arnaudlewis/virtuoso#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6"
+  }
+}

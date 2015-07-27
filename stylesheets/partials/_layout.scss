@@ -2,28 +2,28 @@
 @import "mixin_helpers";
 
 .container-fluid {
-	@include displayFlex;
-	@include flexWrap(wrap);
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .centered {
-	align-items: center;
-	justify-content: center;
+	@include centerContent;
 }
 
 @mixin set-attribute-col-x($current-column, $grid-columns) {
-		@include displayFlex;
-		@include flexWrap(wrap);
+		display: flex;
+		flex-wrap: wrap;
 		box-sizing: border-box;
-		@include flex(0 0 auto);
+		flex: 0 0 auto;
 
 		flex-basis: $current-column * 100 / $grid-columns * 1%;
+		width: $current-column * 100 / $grid-columns * 1%;
 		max-width: $current-column * 100 / $grid-columns * 1%;
 }
 
 @mixin col-x-size($grid-columns, $resolution-suffix) {
 	@for $i from 1 through $grid-columns {
-		.col-#{$i}-#{$resolution-suffix}  {
+		.col-#{$i}-#{$resolution-suffix}  { 
 			@include set-attribute-col-x($i, $grid-columns);
 		}
 	}

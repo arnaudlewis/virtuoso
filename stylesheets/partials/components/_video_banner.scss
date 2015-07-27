@@ -6,27 +6,25 @@
 	width: 100%;
 	color: white;
 	position: relative;
+	height: 100vh;
 
 	&.video-banner-dark .video{
 		background-color: $black;
+		* { color: $white;}
+
+		&::before {
+			background-color: $black;
+			opacity: 0.2;
+		}
 	}
 
 	&.video-banner-light .video {
 		background-color: $white;
-	}
+		* { color: $dark-grey;}
 
-	&.full {
-		height: 100vh;
-		.video, video {
-			height: 100vh;
-			.video-container  {
-				p {
-					@include lineClamp(8);
-				}
-				.title {
-					@include lineClamp(3);
-				}
-			}
+		&::before {
+			background-color: $white;
+			opacity: 0.3;
 		}
 	}
 
@@ -66,24 +64,38 @@
 		-webkit-transition: opacity 0.4s;
 		transition: opacity 0.4s;
 		background-size: cover;
-		@include displayFlex;
+		display: flex;
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		background-size: cover;
 		box-sizing: border-box;
+		height: 100vh;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute; /* could also be absolute */ 
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			opacity: 0.3;
+		}
 
 		video {
 			min-width: 100%; 
 			width: auto; 
 			overflow: hidden;
-			align-self:  center;
+			align-self: center;
 			width: 100%;
+			height: 100vh;
 		}
 
 		.video-container {
 			display: flex;
-			@include flexDirection(column);
+			flex-direction: column;
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -95,9 +107,10 @@
 
 			.title {
 				font-size: 2rem;
+				@include lineClamp(3);
 			}
 			p {
-				margin-top: 2rem;
+				@include lineClamp(8);
 				font-size: 1.3rem;
 				line-height: 1.9rem;
 			}
@@ -108,35 +121,33 @@
  /* Smartphones (landscape) ----------- */
  @media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
  	.video-banner {
-		height: 100vh!important;
-		.video, video {
-			height: 100vh!important;
-			.video-container  {
-				p {
-					@include lineClamp(5);
-				}
-				.title {
-					@include lineClamp(2);
-				}
-			}
-		}
-	}
+ 		height: 100vh!important;
+ 		.video, video {
+ 			height: 100vh!important;
+ 			.video-container  {
+ 				p {
+ 					@include lineClamp(5);
+ 				}
+ 				.title {
+ 					@include lineClamp(2);
+ 				}
+ 			}
+ 		}
+ 	}
  }
 
  /* Smartphones (portrait) ----------- */
  @media only screen and (max-width : $screen-sm-max-portrait) {
  	.video-banner {
- 		&.small {
- 			height: 50vh;
- 			.video, video {
- 				height: 50vh;
- 				.video-container  {
- 					p {
- 						@include lineClamp(5);
- 					}
- 					.title {
- 						@include lineClamp(3);
- 					}
+ 		height: 33vh!important;
+ 		.video, video {
+ 			height: 33vh!important;
+ 			.video-container  {
+ 				p {
+ 					@include lineClamp(5);
+ 				}
+ 				.title {
+ 					@include lineClamp(3);
  				}
  			}
  		}

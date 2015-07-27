@@ -1,0 +1,47 @@
+@import "../mixin_helpers";
+
+.featured-items {
+	align-items: flex-start;
+	width: 100%;
+	box-sizing: border-box;
+	@include flexContainer;
+	padding: 3rem;
+
+	.item {
+		padding: 2rem;
+		text-align: center;
+		display: flex;
+		flex-direction : column;
+		position: relative;
+
+		.text-wrapper {
+			max-width: 100%;
+			min-width: 100%;
+			position: relative;
+
+			p { 
+				line-height: 1.3rem;
+				width: 100%;
+			}
+		}
+
+		.thumbnail {
+			display: inline-block;
+			@include thumbnail;
+		}
+	}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
+	.featured-items {
+		padding: 0;
+	}
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : $screen-sm-max-portrait) {
+	.featured-items {
+		padding: 0;
+	}
+}

@@ -1,27 +1,26 @@
  @import "color";
+ @import "mixin_helpers";
 
  	html * {
  		-webkit-font-smoothing: antialiased;
  		color: $grey;
+ 		box-sizing: border-box;
  	}
 
- 	h1, h2, h3 {
+ 	@include headings {
  		color: $dark-grey;
- 	}
- 	h1 {
- 		font-size: 2.5rem;
  		font-weight: 500;
  		margin: 1.5rem 0;
+ 	}
+ 	
+ 	h1 {
+ 		font-size: 2.5rem;
  	}
 
  	h2 {
  		font-size: 2rem;
- 		font-weight: 500;
- 		margin: 1.5rem 0;
  	}
 
  	h3 {
  		font-size: 1.4rem;
- 		font-weight: 500;
- 		margin: 1.5rem 0;
  	}

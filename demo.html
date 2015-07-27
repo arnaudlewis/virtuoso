@@ -2,10 +2,9 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Prismic Design demo page</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	<link rel="stylesheet" type="text/css" href="dist/virtuoso.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="js/nav.js"></script>
-	<script src="js/slide.js"></script>
+	<script src="dist/virtuoso.min.js"></script>
 </head>
 
 <style>
@@ -40,7 +39,8 @@
 
 
 		<div class="slider slider-dark small">
-			<div class="slide active" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+			<div class="slide" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+				<a href="#" class="arrow-prev"><i class="icon-arrow-prev"></i></a>
 				<div class="slide-container">
 					<div class="title">
 						Website Starter
@@ -55,13 +55,15 @@
 						backed by a groundbreaking CMS
 					</p>
 				</div>
+				<a href="#" class="arrow-next"><i class="icon-arrow-next"></i></a>
 			</div>
 		</div>
 
 		<hr />
 
 		<div class="slider slider-dark medium">
-			<div class="slide active" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+			<div class="slide" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+				<a href="#" class="arrow-prev"><i class="icon-arrow-prev"></i></a>
 				<div class="slide-container">
 					<div class="title">
 						Website Starter
@@ -76,13 +78,15 @@
 						backed by a groundbreaking CMS
 					</p>
 				</div>
+				<a href="#" class="arrow-next"><i class="icon-arrow-next"></i></a>
 			</div>
 		</div>
 
 		<hr />
 
-		<div class="slider slider-dark full">
-			<div class="slide active" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+		<div class="slider slider-dark">
+			<div class="slide" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+				<a href="#" class="arrow-prev"><i class="icon-arrow-prev"></i></a>
 				<div class="slide-container">
 					<div class="title">
 						Website Starter
@@ -97,8 +101,10 @@
 						backed by a groundbreaking CMS
 					</p>
 				</div>
+				<a href="#" class="arrow-next"><i class="icon-arrow-next"></i></a>
 			</div>
-			<div class="slide active" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+			<div class="slide" data-image="https://prismic-io.s3.amazonaws.com/blogtemplate/ff6d898c82d1cde79630bc480b0d58ba4fe4c031_home-header-small.png">
+				<a href="#" class="arrow-prev"><i class="icon-arrow-prev"></i></a>
 				<div class="slide-container">
 					<div class="title">
 						Website Starter
@@ -106,13 +112,14 @@
 						powered by prismic.io
 					</div>
 					<p>
-						Bootstrap websites by
+						Bootstrap wekozd ozd )zd)zd )zdbsites by
 						<br />
 						combining Content Slices in a fluid layout
 						<br />
 						backed by a groundbreaking CMS
 					</p>
 				</div>
+				<a href="#" class="arrow-next"><i class="icon-arrow-next"></i></a>
 			</div>
 		</div>
 
@@ -169,9 +176,9 @@
 
 		<hr />
 
-		<div class="video-banner video-banner-dark full">
+		<div class="video-banner video-banner-dark">
 			<div class="video">
-				<video width="100%" preload="none" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
+				<video width="100%" autoplay id="movie" loop=1 preload="none" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
 					<source src="https://player.vimeo.com/external/132541685.hd.mp4?s=6abc7be229d64a92335e27dd10f1ba79&profile_id=113" width="auto" type="video/mp4" /> 
 					Your browser does not support html5 video. 
 				</video>
@@ -194,7 +201,7 @@
 
 		<div class="featured-items centered">
 			<div class="item col-8-sm-pt col-6-sm-ls col-4 col-4-xl centered">
-				<div class="illustration round-image" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/a5ed4c5cce756794de16a11cdc3fef01e0ecd4b4_artboard-18.png)"></div>
+				<div class="thumbnail" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/a5ed4c5cce756794de16a11cdc3fef01e0ecd4b4_artboard-18.png)"></div>
 				<div class="text-wrapper">
 					<h3>User-friendly visual editor for editing rich content</h3> 
 					<p>The visual rich editor allows you to create and modify documents with various fragment types. Write rich texts, upload, resize and crop images, pin geo-location points and pick colors and dates.</p>
@@ -205,7 +212,7 @@
 			</div>
 
 			<div class="item col-8-sm-pt col-6-sm-ls col-4 col-4-xl centered">
-				<div class="illustration round-image" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/a5ed4c5cce756794de16a11cdc3fef01e0ecd4b4_artboard-18.png)"></div>
+				<div class="thumbnail" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/a5ed4c5cce756794de16a11cdc3fef01e0ecd4b4_artboard-18.png)"></div>
 				<div class="text-wrapper">
 					<h3>User-friendly visual editor for editing rich content</h3> 
 					<p>The visual rich editor allows you to create and modify documents with various fragment types. Write rich texts, upload, resize and crop images, pin geo-location points and pick colors and dates.</p>
@@ -216,7 +223,7 @@
 			</div>
 
 			<div class="item col-8-sm-pt col-6-sm-ls col-4 col-4-xl centered">
-				<div class="illustration round-image" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/a5ed4c5cce756794de16a11cdc3fef01e0ecd4b4_artboard-18.png)"></div>
+				<div class="thumbnail" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/a5ed4c5cce756794de16a11cdc3fef01e0ecd4b4_artboard-18.png)"></div>
 				<div class="text-wrapper">
 					<h3>User-friendly visual editor for editing rich content</h3> 
 					<p>The visual rich editor allows you to create and modify documents with various fragment types. Write rich texts, upload, resize and crop images, pin geo-location points and pick colors and dates.</p>
@@ -274,6 +281,47 @@
 			</div>
 			<img src="https://prismic-io.s3.amazonaws.com/alw12345/medium_75364583-42a2-47f2-b0dd-16aa33e79365_new-york-city-times-square.jpg"/>
 		</div>
+
+		<div class="illustration content-width">
+			<div class="image" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/34fbfd141de79a3f8518dc29e070c5a67c79c57f_prismicio.png)"></div>
+		</div>
+
+		<div class="illustration">
+			<div class="image" style="background-image: url(https://prismic-io.s3.amazonaws.com/alw12345/34fbfd141de79a3f8518dc29e070c5a67c79c57f_prismicio.png)"></div>
+		</div>
+
+
+
+
+
+
+
+			<div class="accordions">
+				<div class="item">
+					<label>
+					<input type="checkbox" />
+						<span>It is compatible with my Project ?</span>
+					<i class="accordion-arrow"></i>
+					</label>
+					<div class="summary">
+						<p>Yes, sure it is. Prismic is really flexible with is API and other stuff really awesome :D</p>
+					</div>
+				</div>
+				<div class="item">
+					<label>
+					<input type="checkbox" />
+					<span>How is this a different approach to content Management ?</span>
+					<i class="accordion-arrow"></i>
+					</label>
+					<div class="summary">
+						<p>Is it really different because of its API who let developer manage all the client side and juste bind the data from prismic API. It is really easy and fully managed by RESTful webservices.</p>
+					</div>
+				</div>
+			</div>
+
+
+
+
 
 	</div>
 </body>

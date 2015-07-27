@@ -1,0 +1,17 @@
+@mixin headings {
+  h1, h2, h3,
+  h4, h5, h6 {
+    @content;
+  }
+}
+
+@mixin flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@mixin centerContent() {
+  align-items: center;
+  justify-content: center;
+}

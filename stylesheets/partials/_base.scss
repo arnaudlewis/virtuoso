@@ -28,22 +28,3 @@ $grid-retina-grid-suffix: 'xl' !default;
 $screen-xl-min: 1921px !default;
 
 $grid-columns-default: $grid-columns-lg !default;
-
-/* ============================ font  ============================ */
-
-$font-size-default: 16px !default;
-
-$font-size-sm: 0.75 * $font-size-default !default;
-$font-size-md: 0.9 * $font-size-default !default;
-$font-size-lg : $font-size-default;
-$font-size-xl: 1.25 * $font-size-default !default;
-
-@font-face {
-    font-family: 'StarterKit';
-    src: url($font-file-url + 'starterkit.eot') format('eot');
-    src : url($font-file-url + 'starterkit.woff') format('woff'),
-          url($font-file-url + 'starterkit.svg#abcd') format('svg'),
-          url($font-file-url + 'starterkit.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}

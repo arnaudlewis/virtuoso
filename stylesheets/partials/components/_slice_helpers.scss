@@ -1,7 +1,8 @@
 @mixin thumbnail {
-	width: 4rem;
-	height: 4rem;
+	width: 3rem;
+	height: 3rem;
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-radius: 0.5rem;
+	transform: translate(0, -50%);
 }

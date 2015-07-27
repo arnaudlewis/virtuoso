@@ -30,7 +30,6 @@ gulp.task('build-sass', function () {
     .pipe(autoprefixer({
         browsers: ['last 3 versions'],
         cascade: false}))
-    .pipe(gulp.dest('css'))
     .pipe(gulp.dest('./dist/'))
     .pipe(minifyCSS())
     .pipe(rename({

@@ -1,5 +1,57 @@
 @import "./partials/color";
 
+//================Common attributes================
+
+html * {
+	color: $grey;
+}
+
+@include headings {
+	color: $dark-grey;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.4rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+
+
+.button {
+	background: $orange;
+	color: $white;
+}
+
+.read-more-button {
+	color: $orange;
+	border: 1px solid $orange;
+	&:hover {
+		border: 1px solid $orange;
+		background: $orange;
+		color: $white;
+	}
+} 
+
+//=====================Slices======================
 .accordions {
 	* {color: $dark-grey-blue;}
 
@@ -25,17 +77,183 @@
 	}
 }
 
-.button {
-	background: $orange;
-	color: $white;
+.centered-highlight {
+	.underlay {
+		background-color: $light-grey;
+	}
 }
 
-.read-more-button {
-	color: $orange;
-	border: 1px solid $orange;
-	&:hover {
+.featured-items {
+	.read-more-button {
+		color: $orange;
 		border: 1px solid $orange;
-		background: $orange;
-		color: $white;
+		&:hover {
+			border: 1px solid $orange;
+			background: $orange;
+			color: $white;
+		}
+	}
+}
+
+.navbar {
+	&.navbar-dark {
+		*{color: $nav-font-light;}
+		background-color: $nav-dark;
+		[type="search"] {
+			background-color: $nav-dark;
+		}
+	}
+
+	&.navbar-light {
+		* {color: $nav-font-dark;}
+		background-color: $nav-light;
+		[type="search"] {
+			background-color: $nav-light;
+		}
+	}
+
+	&.navbar-collapse {
+		[type="search"] {
+			border: solid 1px $grey;
+		}
+	}
+}
+
+.section-header {
+	color: $dark-grey;
+
+	&.section-header-centered {
+		background-color: $sky-blue;
+		* { color: $white; }
+	}
+}
+
+hr.separator {
+	height: 4.5rem;
+
+	&.medium {
+		height: 3rem;
+	}
+	&.small {
+		height: 2rem;
+	}
+}
+
+.slider {
+	&.slider-dark {
+		* { color: $white;}
+
+		.slide::before {
+			background-color: $black;
+			opacity: 0.4;
+		}
+	}
+
+	&.slider-light {
+		* { color: $dark-grey;}
+
+		.slide::before {
+			background-color: $white;
+			opacity: 0.3;
+		}
+	}
+	
+	height: 50vh;
+	.slide {
+		height: 50vh;
+		.slide-container  {
+			p {
+				@include lineClamp(5);
+			}
+			.title {
+				@include lineClamp(3);
+			}
+		}
+	}
+
+	&.medium {
+		height: 50vh;
+		.slide {
+			height: 50vh;
+			.slide-container  {
+				p {
+					@include lineClamp(5);
+				}
+				.title {
+					@include lineClamp(3);
+				}
+			}
+		}
+	}
+
+	&.small {
+		height: 25vh;
+		.slide {
+			height: 25vh;
+			.slide-container  {
+				p {
+					@include lineClamp(3);
+				}
+				.title {
+					@include lineClamp(1);
+				}
+			}
+		}
+	}
+}
+
+.video-banner {
+	height: 100vh;
+
+	&.video-banner-dark .video{
+		background-color: $black;
+		* { color: $white;}
+
+		&::before {
+			background-color: $black;
+			opacity: 0.2;
+		}
+	}
+
+	&.video-banner-light .video {
+		background-color: $white;
+		* { color: $dark-grey;}
+
+		&::before {
+			background-color: $white;
+			opacity: 0.3;
+		}
+	}
+
+	&.medium {
+		height: 50vh;
+		.video, video {
+			height: 50vh;
+			.video-container  {
+				p {
+					@include lineClamp(5);
+				}
+				.title {
+					@include lineClamp(3);
+				}
+			}
+		}
+	}
+
+	&.small {
+		height: 25vh;
+		.video, video {
+			height: 25vh;
+			.video-container  {
+				p {
+					@include lineClamp(3);
+					  font-size: 1.2rem;
+				}
+				.title {
+					@include lineClamp(1);
+					font-size: 2rem;
+				}
+			}
+		}
 	}
 }

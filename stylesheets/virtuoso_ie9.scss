@@ -32,10 +32,11 @@
 	}
 }
 
-.featured-items {
+.featured-items { 
 
 	.item {
 		display: inline-block;
+		vertical-align: top;
 
 		&.col-4 {
 			max-width: 33%;

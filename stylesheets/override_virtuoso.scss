@@ -1,0 +1,41 @@
+@import "./partials/color";
+
+.accordions {
+	* {color: $dark-grey-blue;}
+
+	.item {
+
+		label {
+			background: $light-grey;
+			.accordion-arrow {
+				&:after {
+					color: $sky-blue;
+				}
+			}
+		}
+	}
+}
+
+
+.alternated-highlights {
+	.item {
+		&.alternate {
+			background-color: $light-grey;
+		} 
+	}
+}
+
+.button {
+	background: $orange;
+	color: $white;
+}
+
+.read-more-button {
+	color: $orange;
+	border: 1px solid $orange;
+	&:hover {
+		border: 1px solid $orange;
+		background: $orange;
+		color: $white;
+	}
+}

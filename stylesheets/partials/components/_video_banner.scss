@@ -30,14 +30,17 @@
 
 	&.medium {
 		height: 50vh;
-		.video, video {
+		.video {
 			height: 50vh;
+			video {
+				height: 50vh;
+			}
 			.video-container  {
 				p {
-					@include lineClamp(5);
+					@include lineClamp(3);
 				}
 				.title {
-					@include lineClamp(3);
+					@include lineClamp(2);
 				}
 			}
 		}
@@ -45,16 +48,20 @@
 
 	&.small {
 		height: 25vh;
-		.video, video {
+		.video {
 			height: 25vh;
+			video {
+				height: 25vh;
+			}
 			.video-container  {
 				p {
-					@include lineClamp(3);
-					  font-size: 1.2rem;
+					@include lineClamp(1);
+					font-size: 1.2rem;
 				}
 				.title {
 					@include lineClamp(1);
 					font-size: 2rem;
+					margin: 1rem;
 				}
 			}
 		}
@@ -66,7 +73,6 @@
 		background-size: cover;
 		display: flex;
 		position: absolute;
-		height: 100%;
 		width: 100%;
 		background-size: cover;
 		box-sizing: border-box;
@@ -97,6 +103,9 @@
 			display: flex;
 			flex-direction: column;
 			position: absolute;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
 			left: 50%;
 			top: 50%;
 			width: 80%;
@@ -105,9 +114,24 @@
 			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 
+			.play {
+				margin: 1rem;
+
+				&::after {
+						font-family: StarterKit;
+						content: '\e014';
+						font-size: 3.6rem;
+						padding: 1rem;
+						border: 2px solid $orange;
+						border-radius: 50%;
+						padding-left: 1.3rem;
+				}
+			}
+
 			.title {
-				font-size: 2rem;
+				font-size: 3rem;
 				@include lineClamp(3);
+				margin: 1.5rem;
 			}
 			p {
 				@include lineClamp(8);
@@ -116,40 +140,78 @@
 			}
 		}
 	}
+
+	&.active {
+		.video {
+			&::before {
+				display: none;
+			}
+		}
+		.video, video {
+			.video-container  {
+				width: 100%;
+				top: 0;
+				.play {
+					opacity: 0.2;
+					position: absolute;
+					top: 1.5rem;
+					left: 0rem;
+
+					&::after {
+						font-family: 'StarterKit';
+						content: '\e016';
+						opacity: 1;
+						border: 0;
+						font-size: 1rem;
+						cursor: pointer;
+					}
+					&:hover {
+						opacity: 1;
+					}
+				}
+				p {
+					display: none;
+				}
+				.title {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
- /* Smartphones (landscape) ----------- */
- @media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
- 	.video-banner {
- 		height: 100vh!important;
- 		.video, video {
- 			height: 100vh!important;
- 			.video-container  {
- 				p {
- 					@include lineClamp(5);
- 				}
- 				.title {
- 					@include lineClamp(2);
- 				}
- 			}
- 		}
- 	}
- }
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
+	.video-banner {
+		height: 100vh!important;
+		.video, video {
+			height: 100vh!important;
+			.video-container  {
+				p {
+					@include lineClamp(5);
+				}
+				.title {
+					@include lineClamp(2);
+				}
+			}
+		}
+	}
+}
 
- /* Smartphones (portrait) ----------- */
- @media only screen and (max-width : $screen-sm-max-portrait) {
- 	.video-banner {
- 		height: 33vh!important;
- 		.video, video {
- 			height: 33vh!important;
- 			.video-container  {
- 				p {
- 					@include lineClamp(5);
- 				}
- 				.title {
- 					@include lineClamp(3);
- 				}
- 			}
- 		}
- 	}
- }
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : $screen-sm-max-portrait) {
+	.video-banner {
+		height: 33vh!important;
+		.video, video {
+			height: 33vh!important;
+			.video-container  {
+				p {
+					@include lineClamp(5);
+				}
+				.title {
+					@include lineClamp(3);
+				}
+			}
+		}
+	}
+}

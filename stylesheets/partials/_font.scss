@@ -109,8 +109,23 @@
 
  .icon-circle-down::before {
  	font-family: 'StarterKit';
- 	content: '\e013';
+ 	content: '\e013'; 
  }
+
+  .icon-play::before {
+  font-family: 'StarterKit';
+  content: '\e014';
+ }
+
+ .icon-pause::before {
+  font-family: 'StarterKit';
+  content: '\e015';
+}
+
+ .icon-cross::before {
+  font-family: 'StarterKit';
+  content: '\e016';
+}
 
 
  /* Smartphones (landscape) ----------- */

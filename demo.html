@@ -4,7 +4,7 @@
 	<title>Prismic Design demo page</title>
 	<link rel="stylesheet" type="text/css" href="dist/virtuoso.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="dist/virtuoso.min.js"></script>
+	<script src="dist/virtuoso.js"></script>
 </head>
 
 <style>
@@ -128,11 +128,12 @@
 		<!-- if you wanna autoplay the video and loop, insert this in video html tag ==> autoplay id="movie" loop=1 -->
 		<div class="video-banner video-banner-dark small">
 			<div class="video">
-				<video width="100%" preload="none" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
+				<video width="100%" preload="none" id="movie" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
 					<source src="https://player.vimeo.com/external/132541685.hd.mp4?s=6abc7be229d64a92335e27dd10f1ba79&profile_id=113" width="auto" type="video/mp4" /> 
 					Your browser does not support html5 video. 
 				</video>
 				<div class="video-container">
+				<span class="play"></span>
 					<div class="title">
 						Website Starter
 						<br />
@@ -153,11 +154,12 @@
 
 		<div class="video-banner video-banner-dark medium">
 			<div class="video">
-				<video width="100%" preload="none" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
+				<video width="100%" preload="none"  id="movie" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
 					<source src="https://player.vimeo.com/external/132541685.hd.mp4?s=6abc7be229d64a92335e27dd10f1ba79&profile_id=113" width="auto" type="video/mp4" /> 
 					Your browser does not support html5 video. 
 				</video>
 				<div class="video-container">
+				<span class="play"></span>
 					<div class="title">
 						Website Starter
 						<br />
@@ -178,11 +180,12 @@
 
 		<div class="video-banner video-banner-dark">
 			<div class="video">
-				<video width="100%" autoplay id="movie" loop=1 preload="none" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
+				<video width="100%" muted autoplay id="movie" loop=1 preload="none" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
 					<source src="https://player.vimeo.com/external/132541685.hd.mp4?s=6abc7be229d64a92335e27dd10f1ba79&profile_id=113" width="auto" type="video/mp4" /> 
 					Your browser does not support html5 video. 
 				</video>
 				<div class="video-container">
+				<span class="play"></span>
 					<div class="title">
 						Website Starter
 						<br />

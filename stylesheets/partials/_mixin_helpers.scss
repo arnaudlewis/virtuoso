@@ -15,3 +15,10 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin lineClamp($nbLines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $nbLines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  }

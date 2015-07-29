@@ -11,18 +11,17 @@
 		width: 100%;
 		display: inline-block;
 		display: flex;
-  
+
 		&.alternate {
 			background-color: $light-grey;
 		} 
 
 		.text-wrapper, .image-container {
 			width: 50%;
-		} 
+		}
 
 		.text-wrapper {
-			display: inline-block;
-			min-width: 50%; 
+			min-width: 50%;
 			max-width: 50%;
 			flex-direction: column;
 			align-self: center;
@@ -45,7 +44,6 @@
 		}
 
 		.image-container {
-			display: inline-block;
 			min-width: 50%;
 			max-width: 50%;
 

@@ -18,16 +18,9 @@
 .alternated-highlights {
 
 	.item {
-		position: relative;
-
-		.text-wrapper {
-			position: relative;
-			top: 50%;
-			-webkit-transform: translateY(-50%);
-			-moz-transform: translateY(-50%);
-			-ms-transform: translateY(-50%);
-			-o-transform: translateY(-50%);
-			transform: translateY(-50%);
+		.text-wrapper, .image-container {
+			display: inline-block;
+			vertical-align: middle;
 		}
 	}
 }
@@ -46,6 +39,19 @@
 		&.col-6 {
 			max-width: 49%;
 			min-width: 49%;
+		}
+	}
+}
+
+.accordions {
+	.item {
+		label {
+			display: inline-block;
+
+			span, i {
+				display: inline-block;
+			}
+
 		}
 	}
 }

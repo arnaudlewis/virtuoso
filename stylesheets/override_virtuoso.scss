@@ -1,4 +1,5 @@
 @import "./partials/color";
+@import "./partials/mixin_helpers";
 
 //================Common attributes================
 
@@ -159,7 +160,14 @@ hr.separator {
 	}
 	
 	height: 50vh;
+	* { color: $white;}
 	.slide {
+		background-color: $dark-grey-blue;
+		.slide::before {
+			background-color: $black;
+			opacity: 0.4;
+		}
+
 		height: 50vh;
 		.slide-container  {
 			p {

@@ -1,18 +1,18 @@
-$(document).ready(function(){
-	'use strict';
+$(document).ready(function () {
+  'use strict';
 
-	function displayMobile() {
-		$.each($('.alternated-highlights'), function(index, component) {
+  function displayMobile() {
+$.each($('.alternated-highlights'), function (index, component) {
 			$.each($(component).find('.item'), function(index, item) {
 				var image = $(item).find('.image-container');
 				image.remove();
 				$(item).find('.head-text').after(image);
 			});
 		});
-	}@
+	}
 	function displayDesktop() {
-		$.each($('.alternated-highlights'), function(index, component) {
-			$.each($(component).find('.item'), function(index, item) {
+		$.each($('.alternated-highlights'), function (index, component) {
+			$.each($(component).find('.item'), function (index, item) {
 				var image = $(item).find('.image-container');
 				image.remove();
 				var textWrapper = $(item).find('.text-wrapper');

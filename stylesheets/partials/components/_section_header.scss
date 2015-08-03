@@ -8,12 +8,16 @@
 	color: $dark-grey;
 	padding: 5rem;
 
-	p {
-		line-height: 1.3rem;
-	}
+	.text-wrapper {
+		box-sizing: 100%;
+		max-width: 100%;
+		p {
+			line-height: 1.3rem;
+		}
 
-	@include headings {
-		font-weight: bold;
+		@include headings {
+			font-weight: bold;
+		}
 	}
 
 	&.section-header-centered {

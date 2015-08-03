@@ -169,28 +169,12 @@ hr.separator {
 		}
 
 		height: 50vh;
-		.slide-container  {
-			p {
-				@include lineClamp(5);
-			}
-			.title {
-				@include lineClamp(3);
-			}
-		}
 	}
 
 	&.medium {
 		height: 50vh;
 		.slide {
 			height: 50vh;
-			.slide-container  {
-				p {
-					@include lineClamp(5);
-				}
-				.title {
-					@include lineClamp(3);
-				}
-			}
 		}
 	}
 
@@ -198,14 +182,6 @@ hr.separator {
 		height: 25vh;
 		.slide {
 			height: 25vh;
-			.slide-container  {
-				p {
-					@include lineClamp(3);
-				}
-				.title {
-					@include lineClamp(1);
-				}
-			}
 		}
 	}
 }
@@ -237,14 +213,6 @@ hr.separator {
 		height: 50vh;
 		.video, video {
 			height: 50vh;
-			.video-container  {
-				p {
-					@include lineClamp(5);
-				}
-				.title {
-					@include lineClamp(3);
-				}
-			}
 		}
 	}
 
@@ -252,16 +220,6 @@ hr.separator {
 		height: 25vh;
 		.video, video {
 			height: 25vh;
-			.video-container  {
-				p {
-					@include lineClamp(3);
-					  font-size: 1.2rem;
-				}
-				.title {
-					@include lineClamp(1);
-					font-size: 2rem;
-				}
-			}
 		}
 	}
 }

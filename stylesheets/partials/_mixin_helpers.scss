@@ -16,9 +16,10 @@
   justify-content: center;
 }
 
-@mixin lineClamp($nbLines) {
+@mixin lineClamp($nbLines, $fontSize, $lineHeight) { //font size in rem => impératif !!
   display: -webkit-box;
   -webkit-line-clamp: $nbLines;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  max-height: $nbLines * $fontSize  + ($nbLines - 1) * ($lineHeight  / 2) + 0.2rem;  //0.1rem for character like y p or others which have a part under the baseline of the text.
   }

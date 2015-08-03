@@ -109,44 +109,14 @@ hr.separator {
     .slider .slide .slide::before {
       background-color: #000000;
       opacity: 0.4; }
-    .slider .slide .slide-container p {
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-      overflow: hidden; }
-    .slider .slide .slide-container .title {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden; }
   .slider.medium {
     height: 50vh; }
     .slider.medium .slide {
       height: 50vh; }
-      .slider.medium .slide .slide-container p {
-        display: -webkit-box;
-        -webkit-line-clamp: 5;
-        -webkit-box-orient: vertical;
-        overflow: hidden; }
-      .slider.medium .slide .slide-container .title {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden; }
   .slider.small {
     height: 25vh; }
     .slider.small .slide {
       height: 25vh; }
-      .slider.small .slide .slide-container p {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden; }
-      .slider.small .slide .slide-container .title {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden; }
 
 .video-banner {
   height: 100vh; }
@@ -168,29 +138,7 @@ hr.separator {
     height: 50vh; }
     .video-banner.medium .video, .video-banner.medium video {
       height: 50vh; }
-      .video-banner.medium .video .video-container p, .video-banner.medium video .video-container p {
-        display: -webkit-box;
-        -webkit-line-clamp: 5;
-        -webkit-box-orient: vertical;
-        overflow: hidden; }
-      .video-banner.medium .video .video-container .title, .video-banner.medium video .video-container .title {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden; }
   .video-banner.small {
     height: 25vh; }
     .video-banner.small .video, .video-banner.small video {
       height: 25vh; }
-      .video-banner.small .video .video-container p, .video-banner.small video .video-container p {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-size: 1.2rem; }
-      .video-banner.small .video .video-container .title, .video-banner.small video .video-container .title {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-size: 2rem; }

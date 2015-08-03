@@ -19,15 +19,18 @@
   display: inline-block;
   vertical-align: middle; }
 
-.featured-items .item {
+.featured-items {
   display: inline-block;
-  vertical-align: top; }
-  .featured-items .item.col-4 {
-    max-width: 33%;
-    min-width: 33%; }
-  .featured-items .item.col-6 {
-    max-width: 49%;
-    min-width: 49%; }
+  text-align: center; }
+  .featured-items .item {
+    display: inline-block;
+    vertical-align: top; }
+    .featured-items .item.col-4 {
+      max-width: 33%;
+      min-width: 33%; }
+    .featured-items .item.col-6 {
+      max-width: 49%;
+      min-width: 49%; }
 
 .accordions .item label {
   display: inline-block; }

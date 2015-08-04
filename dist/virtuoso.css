@@ -2000,6 +2000,7 @@ html {
   .slider .slide {
     transition: opacity 0.4s;
     background-size: cover;
+    background-position: center;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -2209,6 +2210,7 @@ html {
   .video-banner .video {
     transition: opacity 0.4s;
     background-size: cover;
+    background-position: center;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;

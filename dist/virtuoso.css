@@ -2616,7 +2616,7 @@ html {
     top: 0;
     left: 0;
     width: 80%;
-    margin: 5rem 0 0 10%;
+    margin: 6.5rem 0 0 10%;
     padding-bottom: 10rem;
     bottom: 20%;
     background-color: #F2F6FA;
@@ -2647,7 +2647,7 @@ html {
     .centered-highlight .underlay {
       width: 100%;
       bottom: 20%;
-      margin: 1.5rem 0 0 0; }
+      margin: 4rem 0 0 0; }
     .centered-highlight .text-wrapper {
       max-width: 90%; }
     .centered-highlight img {

@@ -2005,7 +2005,6 @@ html {
     height: 100%;
     width: 100%;
     background-color: #162C4B;
-    background-size: cover;
     opacity: 0;
     box-sizing: border-box;
     height: 100vh; }
@@ -2552,15 +2551,38 @@ html {
   -ms-flex-direction: row;
   flex-direction: row;
   color: #181818;
-  padding: 5rem; }
+  padding: 5rem;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 3rem; }
   .section-header .text-wrapper {
-    box-sizing: 100%;
-    max-width: 100%; }
+    box-sizing: border-box;
+    width: 60%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3rem; }
     .section-header .text-wrapper p {
-      line-height: 1.3rem; }
+      line-height: 1.9rem; }
     .section-header .text-wrapper h1, .section-header .text-wrapper h2, .section-header .text-wrapper h3,
     .section-header .text-wrapper h4, .section-header .text-wrapper h5, .section-header .text-wrapper h6 {
       font-weight: bold; }
+  .section-header .image-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    margin: 0 2.5%; }
+    .section-header .image-container img {
+      max-width: 100%; }
   .section-header.section-header-centered {
     background-color: #4187d2;
     text-align: center;
@@ -2583,7 +2605,16 @@ html {
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
   .section-header {
-    padding: 2.5rem; } }
+    padding: 2.5rem;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .section-header .text-wrapper {
+      padding: 0;
+      font-size: 1.2rem;
+      text-align: center; }
+    .section-header .image-container {
+      width: 100%; } }
 
 /* ============================ support  ============================ */
 /* ============================ layout  ============================ */
@@ -2741,16 +2772,11 @@ hr.separator.small {
 
 .illustration {
   width: 100%;
-  box-sizing: border-box;
-  height: 50vh; }
+  box-sizing: border-box; }
   .illustration.content-width {
     padding: 5rem; }
-  .illustration .image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center; }
+  .illustration img {
+    width: 100%; }
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) and (max-width: 767px) {

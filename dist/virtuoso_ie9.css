@@ -4,9 +4,9 @@
     position: relative;
     top: 0;
     left: 50%;
-    -webkit-transform: translate(-1.5rem, -1.5rem);
-    -ms-transform: translate(-1.5rem, -1.5rem);
-    transform: translate(-1.5rem, -1.5rem); }
+    -webkit-transform: translate(-1.5rem, 0rem);
+    -ms-transform: translate(-1.5rem, 0rem);
+    transform: translate(-1.5rem, 0rem); }
   .centered-highlight .text-wrapper {
     position: relative;
     top: 0;

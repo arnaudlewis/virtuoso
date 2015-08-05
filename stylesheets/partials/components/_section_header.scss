@@ -8,15 +8,38 @@
 	color: $dark-grey;
 	padding: 5rem;
 
+
+	display: flex;
+	background-size: cover;
+	background-position: center;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem;
+
 	.text-wrapper {
-		box-sizing: 100%;
-		max-width: 100%;
+		box-sizing: border-box;
+		width: 60%;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 3rem;
 		p {
-			line-height: 1.3rem;
+			line-height: 1.9rem;
 		}
 
 		@include headings {
 			font-weight: bold;
+		}
+	}
+
+	.image-container {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30%;
+		margin: 0 2.5%;
+
+		img {
+			max-width: 100%;
 		}
 	}
 
@@ -47,5 +70,15 @@
  @media only screen and (max-width : $screen-sm-max-portrait) {
  	.section-header {
  		padding: 2.5rem;
+ 		flex-direction: column;
+
+ 		.text-wrapper {
+ 			padding: 0;
+ 			font-size: 1.2rem;
+ 			text-align: center;
+ 		}
+ 		.image-container {
+ 			width: 100%;
+ 		}
  	}
  }

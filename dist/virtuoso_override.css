@@ -76,7 +76,8 @@ h6 {
   border: solid 1px #4e4e4e; }
 
 .section-header {
-  color: #181818; }
+  color: #181818;
+  background-color: #ffffff; }
   .section-header.section-header-centered {
     background-color: #4187d2; }
     .section-header.section-header-centered * {

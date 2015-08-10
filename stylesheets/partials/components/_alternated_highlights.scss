@@ -36,6 +36,10 @@
 					align-self: flex-start;
 					@include thumbnail;
 				}
+
+				@include headings {
+					line-height: 2rem;
+				}
 			}
 
 			p {

@@ -2584,6 +2584,9 @@ html {
           background-size: cover;
           background-repeat: no-repeat;
           border-radius: 0.5rem; }
+        .alternated-highlights .item .text-wrapper .head-text h1, .alternated-highlights .item .text-wrapper .head-text h2, .alternated-highlights .item .text-wrapper .head-text h3,
+        .alternated-highlights .item .text-wrapper .head-text h4, .alternated-highlights .item .text-wrapper .head-text h5, .alternated-highlights .item .text-wrapper .head-text h6 {
+          line-height: 2rem; }
       .alternated-highlights .item .text-wrapper p {
         line-height: 1.3rem; }
     .alternated-highlights .item .image-container {

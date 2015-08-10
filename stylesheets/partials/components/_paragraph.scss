@@ -1,3 +1,6 @@
+@import "../mixin_helpers";
+@import "../color";
+
 .paragraph {
   display: flex;
   width: 100%;
@@ -6,8 +9,13 @@
   flex-direction: row;
 
   .container {
-    padding: 1rem;
+    padding: 2rem;
     flex-direction: column;
+
+    @include headings {
+      border-bottom: 1px solid $mid-grey;
+      padding-bottom: 1rem;
+    }
 
     p {
       line-height: 1.2rem;

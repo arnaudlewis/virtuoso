@@ -2671,6 +2671,12 @@ html {
   -ms-flex-align: center;
   align-items: center;
   padding: 3rem; }
+  .section-header.small {
+    height: 25vh; }
+  .section-header.medium {
+    height: 50vh; }
+  .section-header.large {
+    height: 100vh; }
   .section-header .text-wrapper {
     box-sizing: border-box;
     min-width: 60%;
@@ -2683,12 +2689,14 @@ html {
     .section-header .text-wrapper h4, .section-header .text-wrapper h5, .section-header .text-wrapper h6 {
       font-weight: bold; }
   .section-header .image-container {
+    max-height: 100%;
     display: inline-block;
     vertical-align: middle;
     width: 30%;
     margin: 0 2.5%; }
     .section-header .image-container img {
-      max-width: 100%; }
+      max-width: 100%;
+      max-height: 100%; }
   .section-header.section-header-centered {
     background-color: #4187d2;
     text-align: center;
@@ -2912,10 +2920,14 @@ hr.separator.small {
   -ms-flex-direction: row;
   flex-direction: row; }
   .paragraph .container {
-    padding: 1rem;
+    padding: 2rem;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
+    .paragraph .container h1, .paragraph .container h2, .paragraph .container h3,
+    .paragraph .container h4, .paragraph .container h5, .paragraph .container h6 {
+      border-bottom: 1px solid #DDDDDD;
+      padding-bottom: 1rem; }
     .paragraph .container p {
       line-height: 1.2rem;
       max-width: 70rem;
@@ -2926,7 +2938,7 @@ hr.separator.small {
   width: 100%; }
   .source-code .text-wrapper .summary {
     max-width: 70rem;
-    line-height: 1.3rem;
+    line-height: 1.2rem;
     margin: 1rem 0; }
   .source-code pre {
     width: 100%; }

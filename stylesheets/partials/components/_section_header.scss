@@ -9,6 +9,18 @@
 	background-color: $light-grey;
 	padding: 5rem;
 
+	&.small {
+		height: 25vh;
+	}
+
+	&.medium {
+		height: 50vh;
+	}
+
+	&.large {
+		height: 100vh;
+	}
+
 
 	display: flex;
 	background-size: cover;
@@ -34,6 +46,7 @@
 	}
 
 	.image-container {
+		max-height: 100%;
 		display: inline-block;
 		vertical-align: middle;
 		width: 30%;
@@ -41,6 +54,7 @@
 
 		img {
 			max-width: 100%;
+			max-height: 100%;
 		}
 	}
 

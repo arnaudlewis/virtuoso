@@ -2912,9 +2912,14 @@ hr.separator.small {
   -ms-flex-direction: row;
   flex-direction: row; }
   .paragraph .container {
-    padding: 1rem; }
+    padding: 1rem;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
     .paragraph .container p {
-      line-height: 1.2rem; }
+      line-height: 1.2rem;
+      max-width: 70rem;
+      width: 100%; }
 
 .source-code {
   padding: 3rem;

@@ -7,9 +7,12 @@
 
   .container {
     padding: 1rem;
+    flex-direction: column;
 
     p {
       line-height: 1.2rem;
+      max-width: 70rem;
+      width: 100%;
     }
   }
 }

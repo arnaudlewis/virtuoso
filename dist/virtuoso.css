@@ -2935,7 +2935,7 @@ hr.separator.small {
 .source-code {
   padding: 3rem;
   width: 100%; }
-  .source-code .text-wrapper .summary {
+  .source-code .text-wrapper p {
     max-width: 70rem;
     line-height: 1.2rem;
     margin: 1rem 0; }

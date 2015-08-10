@@ -2898,17 +2898,13 @@ hr.separator.small {
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) and (max-width: 767px) {
-  .illustration {
-    height: 100vh; }
-    .illustration.content-width {
-      padding: 2.5rem; } }
+  .illustration.content-width {
+    padding: 2.5rem; } }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
-  .illustration {
-    height: 33vh; }
-    .illustration.content-width {
-      padding: 2.5rem; } }
+  .illustration.content-width {
+    padding: 2.5rem; } }
 
 .paragraph {
   display: -webkit-flex;

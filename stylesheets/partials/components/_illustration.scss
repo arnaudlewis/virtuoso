@@ -14,8 +14,6 @@
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
 	.illustration {
-		height: 100vh;
-
 		&.content-width {
 			padding: 2.5rem;
 		}
@@ -25,8 +23,6 @@
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : $screen-sm-max-portrait) {
 	.illustration {
-		height: 33vh;
-
 		&.content-width {
 			padding: 2.5rem;
 		}

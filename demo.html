@@ -128,9 +128,7 @@
 		<!-- if you wanna autoplay the video and loop, insert this in video html tag ==> autoplay id="movie" loop=1 -->
 		<div class="video-banner video-banner-dark small">
 			<div class="video">
-				<video width="100%" preload="none" id="movie" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
-					<source src="https://www.youtube.com/watch?v=z6264vjb9jg" width="auto" type="video/mp4" /> 
-					Your browser does not support html5 video. 
+				<video width="100%" muted autoplay loop=1 preload="none" poster="http://exemple.fr/poster.jpg" src="https://avvimeo-a.akamaihd.net/36461/633/21717852.mp4?token2=1439206015_1a5d49d651381456de5e205b2fcf475b&aksessionid=2ad89b71b9990c1e" onclick="this.play();"> 
 				</video>
 				<div class="video-container">
 				<span class="play"></span>
@@ -154,9 +152,7 @@
 
 		<div class="video-banner video-banner-dark medium">
 			<div class="video">
-				<video width="100%" preload="none"  id="movie" poster="http://exemple.fr/poster.jpg" onclick="this.play();"> 
-					<source src="https://player.vimeo.com/external/132541685.hd.mp4?s=6abc7be229d64a92335e27dd10f1ba79&profile_id=113" width="auto" type="video/mp4" /> 
-					Your browser does not support html5 video. 
+				<video width="100%" muted autoplay loop=1 preload="none" poster="http://exemple.fr/poster.jpg" src="https://avvimeo-a.akamaihd.net/36461/633/21717852.mp4?token2=1439206015_1a5d49d651381456de5e205b2fcf475b&aksessionid=2ad89b71b9990c1e" onclick="this.play();"> 
 				</video>
 				<div class="video-container">
 				<span class="play"></span>
@@ -180,10 +176,7 @@
 
 		<div class="video-banner video-banner-dark">
 			<div class="video">
-				<video width="100%" muted autoplay id="movie" loop=1 preload="none" poster="http://exemple.fr/poster.jpg" src="https://s.vimeocdn.com/vimeo-prod-std-us/video/156174645.mp4?token=55ba76ba_0x1bc2e209e190e36e9d48766010d159fc97925fe0" onclick="this.play();"> 
-
-			
-				
+				<video width="100%" muted autoplay loop=1 preload="none" poster="http://exemple.fr/poster.jpg" src="https://avvimeo-a.akamaihd.net/36461/633/21717852.mp4?token2=1439206015_1a5d49d651381456de5e205b2fcf475b&aksessionid=2ad89b71b9990c1e" onclick="this.play();"> 
 				</video>
 				<div class="video-container">
 				<span class="play"></span>
@@ -369,7 +362,116 @@
 			</div>
 		</div>
 
+		<div class="paragraph">
+			<div class="container col-8-sm-pt col-12">
+				<h3>Title of the paragraph</h3>
+				<p>
+				This paragraph can contain a lot of different Data including text or medias. It is mostly dedicate to create a paragraph in blog post or things like that.
+				It's also the perfect Slice to render a structuredText if it's use with Prismic.io
+				</p>
+			</div>
 
+			<div class="container col-8-sm-pt col-6">
+				<h3>Title of the paragraph</h3>
+				<p>
+					This paragraph can contain a lot of different Data including text or medias. It is mostly dedicate to create a paragraph in blog post or things like that.
+					It's also the perfect Slice to render a structuredText if it's use with Prismic.io
+				</p>
+			</div>
+
+			<div class="container col-8-sm-pt col-6">
+				<h3>Title of the paragraph</h3>
+				<p>
+					This paragraph can contain a lot of different Data including text or medias. It is mostly dedicate to create a paragraph in blog post or things like that.
+					It's also the perfect Slice to render a structuredText if it's use with Prismic.io
+				</p>
+			</div>
+		</div>
+
+
+		<div class="source-code">
+			<div class="text-wrapper">
+				<h3>
+					This is a new slice to render source code!
+				</h3>
+				<div class="summary">
+					There is a pb to render html, you have to replace the '<' character by his escape translation which is '& l t ;'. 
+					There is a pb to render html, you have to replace the '<' character by his escape translation which is '& l t ;'
+					There is a pb to render html, you have to replace the '<' character by his escape translation which is '& l t ;'
+					There is a pb to render html, you have to replace the '<' character by his escape translation which is '& l t ;'
+					There is a pb to render html, you have to replace the '<' character by his escape translation which is '& l t ;'
+					There is a pb to render html, you have to replace the '<' character by his escape translation which is '& l t ;'
+				</div>
+			<pre>
+				<code>
+use Prismic\LinkResolver;
+/**
+ * The link resolver is the code building URLs for pages corresponding to
+ * a Prismic document.
+ *
+ * If you want to change the URLs of your site, you need to update this class
+ * as well as the routes in app.php.
+ */
+class StarterKitLinkResolver extends LinkResolver
+{
+    private $prismic;
+    public function __construct($prismic)
+    {
+        $this->prismic = $prismic;
+    }
+    public function resolve($link)
+    {
+        if($link instanceof Prismic\Fragment\Link\DocumentLink) {
+            foreach ($this->prismic->get_api()->bookmarks() as $name => $id) {
+                if ($link->getId() == $id && ($name == 'home' || $name == 'skin')) {
+                    return '/';
+                }
+                if ($link->getId() == $id && $name == 'bloghome') {
+                    return '/blog';
+                }
+            }
+            if ($link->isBroken()) {
+                return;
+            }
+            if ($link->getType() == 'contact') {
+                return '/contact';
+            }
+            if ($link->getType() == 'author') {
+                return '/author/'.$link->getId().'/'.$link->getSlug();
+            }
+            if ($link->getType() == 'category') {
+                return '/category/'.$link->getUid();
+            }
+            if ($link->getType() == 'post') {
+                $date = $link->getDate('post.date');
+                $year = $date ? $date->asDateTime()->format('Y') : '0';
+                $month = $date ? $date->asDateTime()->format('m') : '0';
+                $day = $date ? $date->asDateTime()->format('d') : '0';
+                return '/blog/'.$year.'/'.$month.'/'.$day.'/'.urlencode($link->getUid());
+            }
+            if ($link->getType() == 'page') {
+                $homeId = $this->prismic->get_api()->bookmark('home');
+                if ($link->getId() == $homeId) {
+                    return '/';
+                } else {
+                    $pieces = $this->prismic->page_path($link->getUid());
+                    $pieces_encoded = array_map(function ($p) {
+                        return urlencode($p);
+                    }, $pieces);
+                    return '/'.implode('/', $pieces_encoded);
+                }
+            }
+            // This is a generic route for user-created document masks.
+            // To have nicer looking URLs, it is recommended to add a specific rule for any mask you create.
+            return '/document/' . $link->getId() . '/' . $link->getSlug();
+        } else {
+            return $link->getUrl();
+        }
+    }
+}
+				</code>
+			</pre>
+		</div>
 
 	</div>
 </body>

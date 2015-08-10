@@ -1,0 +1,15 @@
+.paragraph {
+  display: flex;
+  width: 100%;
+  padding: 3rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .container {
+    padding: 1rem;
+
+    p {
+      line-height: 1.2rem;
+    }
+  }
+}

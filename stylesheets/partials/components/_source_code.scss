@@ -1,0 +1,21 @@
+.source-code {
+  padding: 3rem;
+  width: 100%;
+
+  .text-wrapper {
+    .summary {
+      max-width: 70rem;
+      line-height: 1.3rem;
+      margin: 1rem 0;
+    }
+  }
+
+  pre {
+    width: 100%;
+    code {
+      width: 100%;
+      padding: 1rem;
+      line-height: 1.4rem;
+    }
+  }
+}

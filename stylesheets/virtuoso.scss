@@ -1,5 +1,6 @@
 @import "partials/reset";
 @import "partials/base";
+@import "partials/highlight";
 @import "partials/common";
 @import "partials/font";
 @import "partials/layout";
@@ -16,3 +17,5 @@
 @import "partials/components/separator"; 
 @import "partials/components/accordions"; 
 @import "partials/components/illustration";
+@import "partials/components/paragraph";
+@import "partials/components/source_code";

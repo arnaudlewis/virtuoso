@@ -24,3 +24,17 @@
     }
   }
 }
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : $screen-sm-min-landscape) and (max-width: $screen-sm-max-landscape) {
+  .paragraph {
+    padding: 0;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : $screen-sm-max-portrait) {
+  .paragraph {
+    padding: 0;
+  }
+}

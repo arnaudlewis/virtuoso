@@ -4,7 +4,6 @@
 .section-header {
 	width: 100%;
 	box-sizing: border-box;
-	@include flexContainer;
 	color: $dark-grey;
 	background-color: $light-grey;
 	padding: 5rem;
@@ -23,6 +22,7 @@
 
 
 	display: flex;
+	flex-direction: row;
 	background-size: cover;
 	background-position: center;
 	flex-direction: row;
@@ -31,6 +31,7 @@
 	padding: 3rem;
 
 	.text-wrapper {
+		flex: 5;
 		box-sizing: border-box;
 		min-width: 60%;
 		display: inline-block;
@@ -46,6 +47,8 @@
 	}
 
 	.image-container {
+		flex: 2;
+		padding: 2rem;
 		max-height: 100%;
 		display: inline-block;
 		vertical-align: middle;

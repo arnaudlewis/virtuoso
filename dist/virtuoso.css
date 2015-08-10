@@ -2649,19 +2649,15 @@ html {
 .section-header {
   width: 100%;
   box-sizing: border-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   color: #181818;
   background-color: #F2F6FA;
   padding: 5rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   background-size: cover;
   background-position: center;
   -webkit-flex-direction: row;
@@ -2681,6 +2677,9 @@ html {
   .section-header.large {
     height: 100vh; }
   .section-header .text-wrapper {
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
     box-sizing: border-box;
     min-width: 60%;
     display: inline-block;
@@ -2692,6 +2691,10 @@ html {
     .section-header .text-wrapper h4, .section-header .text-wrapper h5, .section-header .text-wrapper h6 {
       font-weight: bold; }
   .section-header .image-container {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    padding: 2rem;
     max-height: 100%;
     display: inline-block;
     vertical-align: middle;
@@ -2932,6 +2935,16 @@ hr.separator.small {
       max-width: 70rem;
       width: 100%; }
 
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  .paragraph {
+    padding: 0; } }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  .paragraph {
+    padding: 0; } }
+
 .source-code {
   padding: 3rem;
   width: 100%; }
@@ -2945,3 +2958,13 @@ hr.separator.small {
       width: 100%;
       padding: 1rem;
       line-height: 1.4rem; }
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  .source-code {
+    padding: 1.5rem; } }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  .source-code {
+    padding: 1.5rem; } }

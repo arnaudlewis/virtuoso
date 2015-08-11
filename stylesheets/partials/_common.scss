@@ -1,11 +1,13 @@
  @import "color";
  @import "mixin_helpers";
 
- 	html * {
+      html * {
  		-webkit-font-smoothing: antialiased;
  		color: $grey;
  		box-sizing: border-box;
  	}
+
+  html, body { width: 100%; }
 
  	@include headings {
  		color: $dark-grey;

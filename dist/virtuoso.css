@@ -152,6 +152,9 @@ html * {
   color: #4e4e4e;
   box-sizing: border-box; }
 
+html, body {
+  width: 100%; }
+
 h1, h2, h3,
 h4, h5, h6 {
   color: #181818;
@@ -2660,9 +2663,6 @@ html {
   flex-direction: row;
   background-size: cover;
   background-position: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -2686,7 +2686,8 @@ html {
     vertical-align: middle;
     padding: 3rem; }
     .section-header .text-wrapper p {
-      line-height: 1.9rem; }
+      line-height: 1.9rem;
+      max-width: 100%; }
     .section-header .text-wrapper h1, .section-header .text-wrapper h2, .section-header .text-wrapper h3,
     .section-header .text-wrapper h4, .section-header .text-wrapper h5, .section-header .text-wrapper h6 {
       font-weight: bold; }
@@ -2695,10 +2696,9 @@ html {
     -ms-flex: 2;
     flex: 2;
     padding: 2rem;
-    max-height: 100%;
     display: inline-block;
     vertical-align: middle;
-    width: 30%;
+    min-width: 30%;
     margin: 0 2.5%; }
     .section-header .image-container img {
       max-width: 100%;

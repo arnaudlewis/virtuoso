@@ -25,7 +25,6 @@
 	flex-direction: row;
 	background-size: cover;
 	background-position: center;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	padding: 3rem;
@@ -39,6 +38,7 @@
 		padding: 3rem;
 		p {
 			line-height: 1.9rem;
+			max-width: 100%;
 		}
 
 		@include headings {
@@ -49,10 +49,9 @@
 	.image-container {
 		flex: 2;
 		padding: 2rem;
-		max-height: 100%;
 		display: inline-block;
 		vertical-align: middle;
-		width: 30%;
+		min-width: 30%;
 		margin: 0 2.5%;
 
 		img {

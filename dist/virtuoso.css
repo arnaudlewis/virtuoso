@@ -2386,9 +2386,12 @@ html {
         overflow: hidden;
         max-height: 10.2rem;
         margin: 1.5rem; }
-        .video-banner .video .video-container .title h1 *, .video-banner .video .video-container .title h2 *, .video-banner .video .video-container .title h3 *,
-        .video-banner .video .video-container .title h4 *, .video-banner .video .video-container .title h5 *, .video-banner .video .video-container .title h6 * {
-          margin: 0 0 0.2rem 0; }
+        .video-banner .video .video-container .title h1, .video-banner .video .video-container .title h2, .video-banner .video .video-container .title h3,
+        .video-banner .video .video-container .title h4, .video-banner .video .video-container .title h5, .video-banner .video .video-container .title h6 {
+          margin: 0; }
+          .video-banner .video .video-container .title h1 *, .video-banner .video .video-container .title h2 *, .video-banner .video .video-container .title h3 *,
+          .video-banner .video .video-container .title h4 *, .video-banner .video .video-container .title h5 *, .video-banner .video .video-container .title h6 * {
+            margin: 0 0 0.2rem 0; }
       .video-banner .video .video-container p {
         display: -webkit-box;
         -webkit-line-clamp: 8;
@@ -2869,9 +2872,9 @@ hr.separator.small {
           border-radius: 50%;
           color: #4187d2;
           font-size: 1.4rem; }
-    .accordions .item input {
+    .accordions .item input[type="checkbox"] {
       display: none; }
-      .accordions .item input:checked ~ .summary {
+      .accordions .item input[type="checkbox"]:checked ~ .summary {
         transition: height 0.3s ease-in-out; }
     .accordions .item .summary {
       overflow: hidden;

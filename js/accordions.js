@@ -1,8 +1,8 @@
 $(document).ready(function () {
   'use strict';
 
-  $.each($('.accordions'), function(index, component) {
-    $.each($(component).children(), function(index, child) {
+  $('.accordions').map(function(index, component) {
+    $(component).children().map(function(index, child) {
       var summaryNode = $($(child).find(".summary"));
       var summaryContent = summaryNode.html();
       summaryNode.html("");

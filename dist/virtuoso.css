@@ -2257,7 +2257,8 @@ html {
   width: 100%;
   color: white;
   position: relative;
-  height: 100vh; }
+  height: 100vh;
+  min-height: 20rem; }
   .video-banner .video-banner .video [data-oembed-type="video"] {
     width: 100%;
     height: 100%; }
@@ -2283,16 +2284,17 @@ html {
         height: 50vh; }
       .video-banner.medium .video .video-container p {
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        max-height: 6rem; }
+        max-height: 3.75rem; }
       .video-banner.medium .video .video-container .title {
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        max-height: 6.7rem; }
+        max-height: 4.7rem;
+        font-size: 2rem; }
   .video-banner.small {
     height: 25vh; }
     .video-banner.small .video {
@@ -2325,7 +2327,8 @@ html {
     width: 100%;
     background-size: cover;
     box-sizing: border-box;
-    height: 100vh; }
+    height: 100vh;
+    min-height: 20rem; }
     .video-banner .video::before {
       content: "";
       display: block;
@@ -2345,7 +2348,8 @@ html {
       -ms-flex-item-align: center;
       align-self: center;
       width: 100%;
-      height: 100vh; }
+      height: 100vh;
+      min-height: 20rem; }
     .video-banner .video .video-container {
       display: -webkit-flex;
       display: -ms-flexbox;

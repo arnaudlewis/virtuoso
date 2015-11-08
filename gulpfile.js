@@ -12,7 +12,7 @@ rename = require('gulp-rename');
 
 
 gulp.task('build-js', function () {
-    gulp.src('./js/**/*.js')
+    gulp.src(['./js/jquery.js', './js/**/*.js'])
     .pipe(concat('virtuoso.js'))
     .pipe(gulp.dest('./dist/'))
     .pipe(uglify())
@@ -42,5 +42,4 @@ gulp.task('watch-sass', function() {
     gulp.watch(['./stylesheets/**/*.scss'], ['build-sass']);
 });
 
-
-    gulp.task('default', ['build-min-js']);
+gulp.task('default', ['build-js', 'watch-js']);

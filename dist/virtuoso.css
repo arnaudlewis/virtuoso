@@ -2076,7 +2076,7 @@ html {
   .fixed-menu .navbar-switcher {
     position: absolute;
     right: 1rem;
-    top: 1rem;
+    top: 1.3rem;
     display: none; }
   .fixed-menu .fixed-menu-container {
     display: -webkit-flex;
@@ -2119,20 +2119,20 @@ html {
   transition: all 0.3s; }
 
 .fixed-menu.fixed-menu-shrink {
-  height: 3.3rem;
+  height: 4rem;
   opacity: 0.8; }
 
 .fixed-menu.fixed-menu-shrink h1,
 .fixed-menu.fixed-menu-shrink nav a {
-  line-height: 3.3rem; }
+  line-height: 4rem; }
 
 .fixed-menu.fixed-menu-shrink h1 {
-  font-size: 1.65rem; }
+  font-size: 2rem; }
 
 /* Tablets (landscape) ----------- */
 @media only screen and (max-device-width: 1024px) {
   .fixed-menu {
-    height: 3.3rem;
+    height: 4rem;
     overflow: initial; }
     .fixed-menu .navbar-switcher {
       display: block; }
@@ -2145,8 +2145,8 @@ html {
     .fixed-menu h1 {
       color: #181818;
       letter-spacing: 4px;
-      line-height: 3.3rem;
-      font-size: 1.65rem; }
+      line-height: 4rem;
+      font-size: 2rem; }
     .fixed-menu nav {
       display: -webkit-flex;
       display: -ms-flexbox;

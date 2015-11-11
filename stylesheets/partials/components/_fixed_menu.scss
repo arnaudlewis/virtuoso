@@ -2,7 +2,7 @@
 @import "../base";
 
 $menu-height: 5rem;
-$menu-shrink-height: $menu-height * 0.66;
+$menu-shrink-height: 4rem;
 
 .fixed-menu {
   position: fixed;
@@ -19,7 +19,7 @@ $menu-shrink-height: $menu-height * 0.66;
   .navbar-switcher {
     position: absolute;
     right: 1rem;
-    top: 1rem;
+    top: 1.3rem;
     display: none;
   }
 

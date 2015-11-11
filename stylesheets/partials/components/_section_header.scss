@@ -88,15 +88,17 @@
  	.section-header {
  		padding: 2.5rem;
  		flex-direction: column;
+ 		position: relative;
 
  		.text-wrapper {
+ 			flex: inherit;
  			padding: 0;
  			font-size: 1.2rem;
  			text-align: center;
  			width: 100%;
  		}
  		.image-container {
- 			width: 100%;
+ 			display: none;
  		}
  	}
  }

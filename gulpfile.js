@@ -42,4 +42,4 @@ gulp.task('watch-sass', function() {
     gulp.watch(['./stylesheets/**/*.scss'], ['build-sass']);
 });
 
-gulp.task('default', ['build-js', 'watch-js']);
+gulp.task('default', ['build-js', 'watch-js', 'build-sass', 'watch-sass']);

@@ -34,7 +34,7 @@
 					@include lineClamp(5, 1.3, 1.9);
 				}
 				.title {
-					@include lineClamp(3, 2, 1);
+					@include lineClamp(2, 2.5, 3);
 				}
 			}
 		}
@@ -50,7 +50,7 @@
 					  font-size: 1.2rem;
 				}
 				.title {
-					@include lineClamp(1, 2, 1);
+					@include lineClamp(1, 2.5, 3);
 				}
 			}
 		}
@@ -128,9 +128,11 @@
 			transform: translate(-50%, -50%);
 
 			.title {
-				* { font-size: 2rem; margin: 0 0 0.2rem 0;}
-				@include lineClamp(3, 2, 1);
-				font-size: 2rem;
+				font-size: 2.5rem;
+				line-height: 3rem;
+				margin: 0 0 0.2rem 0;
+				@include lineClamp(2, 2.5, 3);
+				font-weight: bold;
 				margin: 1.5rem 0;
 			}
 
@@ -153,9 +155,6 @@
 				p {
 					@include lineClamp(5, 1.3, 1.9);
 				}
-				.title {
-					@include lineClamp(2, 2, 1);
-				}
 			}
 		}
 	}
@@ -168,26 +167,9 @@
  		.slide [class *="arrow-"] {
  			bottom: 5%;
  			top: initial;
- 		} 
- 		
- 		&.small {
- 			min-height: 50vh!important;
- 			.slide { 
- 				min-height: 50vh!important;
- 				.slide-container  {
- 					p {
- 						@include lineClamp(2, 1.2, 1.3);
- 						font-size: 1.2rem;
- 					}
- 					.title {
- 						@include lineClamp(1, 2, 1);
- 						> * {font-size: 2rem;}
- 					}
- 				}
- 			}
  		}
-
- 		 &.medium {
+ 		
+ 		 &.medium, &.small {
  			min-height: 50vh!important;
  			.slide { 
  				min-height: 50vh!important;
@@ -195,10 +177,6 @@
  					p {
  						@include lineClamp(3, 1.2, 1.3);
  						font-size: 1.2rem;
- 					}
- 					.title {
- 						@include lineClamp(2, 2, 1);
- 						font-size: 2rem;
  					}
  				}
  			}

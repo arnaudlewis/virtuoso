@@ -1,10 +1,13 @@
  @import "color";
  @import "mixin_helpers";
 
-      html * {
+@import url(https://fonts.googleapis.com/css?family=Lato|Montserrat);
+
+  html * {
  		-webkit-font-smoothing: antialiased;
  		color: $grey;
  		box-sizing: border-box;
+    font-family: 'Lato', sans-serif
  	}
 
   html, body { width: 100%; }

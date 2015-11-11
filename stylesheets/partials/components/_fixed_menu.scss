@@ -1,0 +1,138 @@
+@import "../color";
+@import "../base";
+
+$menu-height: 5rem;
+$menu-shrink-height: $menu-height * 0.66;
+
+.fixed-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $light-grey;
+  z-index: 10000;
+  height: $menu-height;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+
+  .navbar-switcher {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: none;
+  }
+
+  .fixed-menu-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5rem;
+    height: 100%;
+  }
+
+  h1 {
+    flex: 1;
+    text-transform: uppercase;
+    color: $dark-grey;
+    letter-spacing: 4px;
+    line-height: $menu-height;
+    font-size: $menu-height / 2;
+    margin: 0;
+    float: left;
+  }
+
+  nav {
+    float: right;
+    height: 100%;
+
+    a {
+      flex: 1;
+      line-height: $menu-height;
+      color: $mid-light-grey;
+      font-weight: 700;
+      margin: 0 0 0 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      &:hover {
+        color: $dark-grey;
+      }
+    }
+  }
+}
+
+
+/* Transitions and class for reduced height */
+.fixed-menu h1,
+.fixed-menu nav a {
+  transition: all 0.3s;
+}
+
+.fixed-menu.fixed-menu-shrink {
+  height: $menu-shrink-height;
+  opacity: 0.8;
+}
+
+.fixed-menu.fixed-menu-shrink h1,
+.fixed-menu.fixed-menu-shrink nav a {
+  line-height: $menu-shrink-height;
+}
+
+.fixed-menu.fixed-menu-shrink h1 {
+  font-size: $menu-shrink-height / 2;
+}
+
+/* Tablets (landscape) ----------- */
+@media only screen and (max-device-width : $screen-md-max) {
+  .fixed-menu {
+    height: $menu-shrink-height;
+    overflow: initial;
+
+    .navbar-switcher {
+      display: block;
+    }
+
+    &.fixed-menu-shrink {
+      opacity: 1;
+      & nav a {
+        line-height: $menu-height;
+      }
+    }
+
+    .fixed-menu-container {
+      padding: 0 2rem;
+    }
+
+    h1 {
+      color: $dark-grey;
+      letter-spacing: 4px;
+      line-height: $menu-shrink-height;
+      font-size: $menu-shrink-height / 2;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 3.3rem;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      height: auto;
+      transform: scaleY(0);    
+      transform-origin: top;
+      transition: transform 0.26s linear;
+
+      &.active {
+        transform: scaleY(1);
+      }
+
+      a {
+        margin: 0;
+        text-align: center;
+        background-color: $white;
+        border-bottom: 1px solid $light-grey;
+      } 
+    }
+  }
+}

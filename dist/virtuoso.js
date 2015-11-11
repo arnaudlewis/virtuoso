@@ -81,20 +81,14 @@ $( document ).ready(function() {
 
   function scrollPage() {
     window.requestAnimationFrame(scrollPage)
-    var sy = scrollY();
+    var sy = window.scrollY;
     if ( sy >= changeHeaderOn ) {
       $header.addClass('fixed-menu-shrink' );
     }
     else {
       $header.removeClass('fixed-menu-shrink' );
     }
-    didScroll = false;
   }
-
-  function scrollY() {
-    return window.pageYOffset || docElem.scrollTop;
-  }
-
   window.requestAnimationFrame(scrollPage)
 });
 

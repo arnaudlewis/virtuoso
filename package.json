@@ -1,6 +1,6 @@
 {
   "name": "virtuoso",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "CSS Framework to build webpage in a minute",
   "main": "gulpfile.js",
   "repository": {

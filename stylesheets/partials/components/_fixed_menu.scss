@@ -5,16 +5,27 @@ $menu-height: 5rem;
 $menu-shrink-height: 4rem;
 
 .fixed-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  background: $light-grey;
-  z-index: 10000;
   height: $menu-height;
-  overflow: hidden;
-  opacity: 1;
-  transition: all 0.3s ease-in-out;
+
+  .overlay {
+    position: fixed;
+    background-color: $black;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 100;
+    display: none;
+
+    &.pre-animate {
+      display: block;
+      transition: opacity .3s ease-in-out;
+    }
+
+    &.animate {
+      opacity: 0.6;
+    }
+  }
 
   .navbar-switcher {
     position: absolute;
@@ -29,6 +40,16 @@ $menu-shrink-height: 4rem;
     margin: 0 auto;
     padding: 0 5rem;
     height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $menu-height;
+      background: $light-grey;
+      z-index: 10000;
+      overflow: hidden;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
   }
 
   h1 {
@@ -68,9 +89,12 @@ $menu-shrink-height: 4rem;
   transition: all 0.3s;
 }
 
-.fixed-menu.fixed-menu-shrink {
-  height: $menu-shrink-height;
+.fixed-menu.fixed-menu-shrink .fixed-menu-container {
   opacity: 0.8;
+}
+
+.fixed-menu.fixed-menu-shrink, .fixed-menu.fixed-menu-shrink .fixed-menu-container {
+  height: $menu-shrink-height;
 }
 
 .fixed-menu.fixed-menu-shrink h1,
@@ -82,11 +106,9 @@ $menu-shrink-height: 4rem;
   font-size: $menu-shrink-height / 2;
 }
 
-/* Tablets (landscape) ----------- */
 @media only screen and (max-device-width : $screen-md-max) {
   .fixed-menu {
     height: $menu-shrink-height;
-    overflow: initial;
 
     .navbar-switcher {
       display: block;
@@ -97,9 +119,14 @@ $menu-shrink-height: 4rem;
       & nav a {
         line-height: $menu-height;
       }
-    }
 
+      .fixed-menu-container {
+        opacity: 1;
+      }
+    }
     .fixed-menu-container {
+      height: $menu-shrink-height;
+      overflow: initial;
       padding: 0 2rem;
     }
 

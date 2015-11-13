@@ -61,6 +61,10 @@ $menu-shrink-height: 4rem;
     font-size: $menu-height / 2;
     margin: 0;
     float: left;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   nav {

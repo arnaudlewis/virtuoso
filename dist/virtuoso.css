@@ -167,10 +167,10 @@ body.freeze {
   overflow: hidden; }
 
 h1 {
-  font-size: 2.5rem; }
+  font-size: 3rem; }
 
 h2 {
-  font-size: 2rem; }
+  font-size: 2.5rem; }
 
 h3 {
   font-size: 1.4rem; }
@@ -276,32 +276,32 @@ html {
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) and (max-width: 767px) {
   html {
-    font-size: 12px; } }
+    font-size: 13.5px; } }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 420px) {
   html {
-    font-size: 12px; } }
+    font-size: 13.5px; } }
 
 /* Tablets (landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   html {
-    font-size: 14.4px; } }
+    font-size: 16.2px; } }
 
 /* Tablets (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   html {
-    font-size: 14.4px; } }
+    font-size: 16.2px; } }
 
 /* Large screens ----------- */
 @media only screen and (min-width: 1025px) and (max-width: 1920px) {
   html {
-    font-size: 16px; } }
+    font-size: 18px; } }
 
 /* Retina screens ----------- */
 @media only screen and (min-width: 1921px) {
   html {
-    font-size: 20px; } }
+    font-size: 22.5px; } }
 
 /* ============================ support  ============================ */
 /* ============================ layout  ============================ */
@@ -2115,6 +2115,8 @@ html {
     font-size: 2.5rem;
     margin: 0;
     float: left; }
+    .fixed-menu h1 a {
+      text-decoration: none; }
   .fixed-menu nav {
     float: right;
     height: 100%; }
@@ -2199,6 +2201,73 @@ html {
         text-align: center;
         background-color: #ffffff;
         border-bottom: 1px solid #f6f6f6; } }
+
+/* ============================ support  ============================ */
+/* ============================ layout  ============================ */
+.tab-menu {
+  background-color: #ffffff;
+  width: 100%; }
+  .tab-menu .tabs {
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 3rem;
+    text-align: center;
+    height: 5rem;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .tab-menu .tabs .tab {
+      height: 100%;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border-bottom: 0.2rem solid #ffffff; }
+      .tab-menu .tabs .tab.active {
+        border-color: #4187d2; }
+  .tab-menu .tabs-content {
+    min-height: 10rem; }
+    .tab-menu .tabs-content .tab-content {
+      width: 100%;
+      height: auto;
+      padding: 2rem;
+      display: none; }
+      .tab-menu .tabs-content .tab-content.active {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+
+@media only screen and (max-width: 420px) {
+  .tab-menu .tabs {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%; }
+    .tab-menu .tabs .tab {
+      height: 4rem;
+      border-bottom: 0.2rem solid #f6f6f6;
+      width: 100%; } }
 
 .slider {
   width: 100%;
@@ -3090,3 +3159,80 @@ hr.separator.small {
 @media only screen and (max-width: 420px) {
   .source-code {
     padding: 1.5rem; } }
+
+/* ============================ support  ============================ */
+/* ============================ layout  ============================ */
+.photo-gallery {
+  padding: 1px;
+  position: relative;
+  height: auto;
+  font-size: 0; }
+
+.element-to-stretch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: teal; }
+
+.wrapper-1x1 .inner {
+  position: relative;
+  height: 0;
+  padding: 0 0 101% 0; }
+  .wrapper-1x1 .inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.wrapper-2x1 .inner {
+  position: relative;
+  height: 0;
+  padding: 0 0 50% 0; }
+  .wrapper-2x1 .inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.wrapper {
+  padding: 2px;
+  box-sizing: border-box;
+  display: inline-block; }
+
+.wrapper-1x1 {
+  width: 16,66%; }
+
+.wrapper-2x1 {
+  width: 33,33%; }
+
+.inner {
+  background-size: cover;
+  background-position: center; }
+
+@media only screen and (max-width: 1920px) {
+  .wrapper-1x1 {
+    width: 16.66%; }
+  .wrapper-2x1 {
+    width: 33.33%; } }
+
+@media only screen and (max-device-width: 1440px) {
+  .wrapper-1x1 {
+    width: 20%; }
+  .wrapper-2x1 {
+    width: 40%; } }
+
+@media only screen and (max-width: 1024px) {
+  .wrapper-1x1 {
+    width: 25%; }
+  .wrapper-2x1 {
+    width: 50%; } }
+
+@media only screen and (max-width: 420px) {
+  .wrapper-1x1 {
+    width: 50%; }
+  .wrapper-2x1 {
+    width: 100%; } }

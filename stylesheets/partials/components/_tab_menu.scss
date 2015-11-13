@@ -1,0 +1,66 @@
+@import '../color';
+@import '../base';
+
+$tab-menu-color: $white;
+
+.tab-menu {
+  background-color: $tab-menu-color;
+  width: 100%;
+
+  .tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    text-align: center;
+    height: 5rem;
+    align-items: center;
+
+    .tab {
+      height: 100%;
+      flex: 1;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 0.2rem solid $tab-menu-color;
+
+      &.active {
+        border-color: #4187d2;
+      }
+    }
+  }
+
+  .tabs-content {
+    min-height: 10rem;
+
+    .tab-content {
+      width: 100%;
+      height: auto;
+      padding: 2rem;
+      display: none;
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+ @media only screen and (max-width : $screen-sm-max-portrait) {
+  .tab-menu {
+    .tabs {
+      flex-direction: column;
+      height: 100%;
+
+      .tab {
+        height: 4rem;
+        border-bottom: 0.2rem solid $light-grey;
+        width: 100%;
+      }
+    }
+  }
+}

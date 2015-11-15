@@ -43,6 +43,45 @@ $column-min-width: 420px;
   padding: 2px;
   box-sizing: border-box;
   display: inline-block;
+  position: relative;
+
+  .action-pane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: $transparent-sky-blue;
+    z-index: 1;
+    color: black;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: height .3s ease-in-out;
+
+    > span {
+      color: white;
+      border: 3px solid white;
+      border-radius: 50%;
+      padding: 0.7rem;
+      font-size: 1.6rem;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      cursor: pointer;
+      * { color: white; }
+    }
+  }
+
+  &.active {
+    .action-pane {
+      height: 100%;
+
+      > span {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .wrapper-1x1 {

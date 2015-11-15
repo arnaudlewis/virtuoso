@@ -28,7 +28,7 @@ $( document ).ready(function() {
 
   var docElem = $(document)[0],
   $header = $( '.fixed-menu' ),
-  changeHeaderOn = 100;
+  changeHeaderOn = 10;
 
 
   function scrollPage() {
@@ -41,5 +41,6 @@ $( document ).ready(function() {
       $header.removeClass('fixed-menu-shrink' );
     }
   }
-  window.requestAnimationFrame(scrollPage)
+  function is_touch_device() { return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)); } 
+  if(!is_touch_device()) window.requestAnimationFrame(scrollPage)
 });

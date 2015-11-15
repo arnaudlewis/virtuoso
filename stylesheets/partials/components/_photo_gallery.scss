@@ -103,11 +103,15 @@ $column-min-width: 420px;
   height: 100%;
   position: fixed;
   z-index: 1001;
-  display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  display: none;
+
+  &.pre-active {
+    display: flex;
+  }
 
   &.active {
     opacity: 1;

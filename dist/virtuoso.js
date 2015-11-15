@@ -147,6 +147,8 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
 
+  if($('.photo-gallery').length > 0) $('body').prepend('<div class="preview-image"><img alt=""/></div>');
+
   function is_touch_device() { return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)); } 
   
   if(!is_touch_device()) {
@@ -164,18 +166,23 @@ $(document).ready(function () {
   });
 
   function previewImage($wrapper) {
+    $imgViewer = $('.preview-image');
 
     $('body').addClass('freeze');
     var url = $wrapper.find('.inner').data('image-url');
-    $('body').prepend('<div class="preview-image"><img src="' + url + '" alt=""/></div>');
+    $imgViewer.find('img').attr('src', url);
+    $imgViewer.addClass('pre-active');
     
-    $imgViewer = $('.preview-image');
 
     setTimeout(function() { $imgViewer.addClass('active') }, 50);
-    $('.preview-image').one('click', function() {
-      $imgViewer.removeClass('active');
-      setTimeout(function() { $imgViewer.remove(); $('body').removeClass('freeze'); }, 300);
+    $imgViewer.one('click', function() {
+      setTimeout(function() { removeImageViewer($imgViewer); $('body').removeClass('freeze'); }, 300);
     })
+
+    function removeImageViewer($imgViewer) {
+      $imgViewer.removeClass('active')
+      setTimeout(function() { $imgViewer.removeClass('pre-active') }, 300);
+    }
   }
 
 });

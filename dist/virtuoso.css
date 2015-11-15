@@ -3260,9 +3260,6 @@ hr.separator.small {
   height: 100%;
   position: fixed;
   z-index: 1001;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -3270,7 +3267,12 @@ hr.separator.small {
   -ms-flex-pack: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out; }
+  transition: opacity 0.3s ease-in-out;
+  display: none; }
+  .preview-image.pre-active {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
   .preview-image.active {
     opacity: 1; }
   .preview-image img {

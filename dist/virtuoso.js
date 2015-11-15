@@ -154,16 +154,28 @@ $(document).ready(function () {
   }
    else {
     $('.wrapper').on('click', function() {
+      $(this).removeClass('active');
       previewImage($(this));
     });
   }
 
   $('.show-action').on('click', function() {
-    previewImage($(this).closest('wrapper'));
+    previewImage($(this).closest('.wrapper'));
   });
 
   function previewImage($wrapper) {
-    window.alert('preview');
+
+    $('body').addClass('freeze');
+    var url = $wrapper.find('.inner').data('image-url');
+    $('body').prepend('<div class="preview-image"><img src="' + url + '" alt=""/></div>');
+    
+    $imgViewer = $('.preview-image');
+
+    setTimeout(function() { $imgViewer.addClass('active') }, 50);
+    $('.preview-image').one('click', function() {
+      $imgViewer.removeClass('active');
+      setTimeout(function() { $imgViewer.remove(); $('body').removeClass('freeze'); }, 300);
+    })
   }
 
 });

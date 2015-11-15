@@ -2104,7 +2104,7 @@ html {
     width: 100%;
     height: 5rem;
     background: #f6f6f6;
-    z-index: 10000;
+    z-index: 1000;
     overflow: hidden;
     opacity: 1;
     transition: all 0.3s ease-in-out; }
@@ -3234,14 +3234,15 @@ hr.separator.small {
       padding: 0.7rem;
       font-size: 1.6rem;
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.1s linear;
       cursor: pointer; }
       .wrapper .action-pane > span * {
         color: white; }
   .wrapper.active .action-pane {
     height: 100%; }
     .wrapper.active .action-pane > span {
-      opacity: 1; }
+      opacity: 1;
+      transition: opacity 0.3s cubic-bezier(0.54, -0.03, 1, 0.24); }
 
 .wrapper-1x1 {
   width: 16,66%; }
@@ -3252,6 +3253,30 @@ hr.separator.small {
 .inner {
   background-size: cover;
   background-position: center; }
+
+.preview-image {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1001;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; }
+  .preview-image.active {
+    opacity: 1; }
+  .preview-image img {
+    width: 80%;
+    max-height: 80%;
+    object-fit: contain; }
 
 @media only screen and (max-width: 1920px) {
   .wrapper-1x1 {
@@ -3275,4 +3300,13 @@ hr.separator.small {
   .wrapper-1x1 {
     width: 50%; }
   .wrapper-2x1 {
+    width: 100%; } }
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  .preview-image img {
+    width: 100%; } }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 420px) {
+  .preview-image img {
     width: 100%; } }

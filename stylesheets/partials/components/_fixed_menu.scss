@@ -46,7 +46,7 @@ $menu-shrink-height: 4rem;
       width: 100%;
       height: $menu-height;
       background: $light-grey;
-      z-index: 10000;
+      z-index: 1000;
       overflow: hidden;
       opacity: 1;
       transition: all 0.3s ease-in-out;
